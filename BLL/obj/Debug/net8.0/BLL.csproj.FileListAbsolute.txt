@@ -10,6 +10,7 @@ E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editor
 E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
 E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
 E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.sourcelink.json
 E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.csproj.Up2Date
 E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\BLL.dll
 E:\vstimPJ\RestMan3\BLL\obj\Debug\net8.0\refint\BLL.dll

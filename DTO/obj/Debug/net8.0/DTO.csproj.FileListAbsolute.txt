@@ -1,12 +1,13 @@
 E:\vstimPJ\RestMan3\DTO\bin\Debug\net8.0\DTO.deps.json
 E:\vstimPJ\RestMan3\DTO\bin\Debug\net8.0\DTO.dll
 E:\vstimPJ\RestMan3\DTO\bin\Debug\net8.0\DTO.pdb
+E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.csproj.AssemblyReference.cache
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.AssemblyInfoInputs.cache
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.AssemblyInfo.cs
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.csproj.CoreCompileInputs.cache
+E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.sourcelink.json
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.dll
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\refint\DTO.dll
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.pdb
 E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\ref\DTO.dll
-E:\vstimPJ\RestMan3\DTO\obj\Debug\net8.0\DTO.csproj.AssemblyReference.cache

@@ -8,6 +8,7 @@ E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editor
 E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
 E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
 E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.sourcelink.json
 E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.csproj.Up2Date
 E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\DAL.dll
 E:\vstimPJ\RestMan3\DAL\obj\Debug\net8.0\refint\DAL.dll

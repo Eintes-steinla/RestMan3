@@ -1,47 +1,23 @@
-﻿using System.Windows;
-using RestMan3.WPF.Common;
-using RestMan3.WPF.Views.Dashboard;
+﻿using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace RestMan3.WPF
+namespace RestMan3;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            NavigationHelper.MainContent = MainContent;
-
-            ApplyAuthorization();
-
-            NavigationHelper.Navigate(new DashboardView());
-        }
-
-        private void ApplyAuthorization()
-        {
-            var user = SessionContext.CurrentUser;
-
-            if (user.RoleName != "Admin")
-            {
-                btnUser.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void BtnDashboard_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationHelper.Navigate(new DashboardView());
-        }
-
-        private void BtnCategory_Click(object sender, RoutedEventArgs e)
-        {
-            // sẽ làm ở phase 3
-        }
-
-        private void BtnLogout_Click(object sender, RoutedEventArgs e)
-        {
-            var login = new Views.Auth.LoginView();
-            login.Show();
-            this.Close();
-        }
+        InitializeComponent();
     }
 }

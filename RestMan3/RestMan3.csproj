@@ -9,24 +9,68 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\iconsAnalytics60.png" />
+    <None Remove="Assets\Icons\iconsCart60.png" />
+    <None Remove="Assets\Icons\iconsLock48.png" />
+    <None Remove="Assets\Icons\iconsPhone48.png" />
+    <None Remove="Assets\Icons\iconsStore60.png" />
+    <None Remove="Assets\Icons\iconsStore70.png" />
+    <None Remove="Assets\Icons\iconsUser64.png" />
+    <None Remove="Assets\Icons\iconsVietnam48.png" />
+    <None Remove="Assets\Images\bglogin.jpg" />
+    <None Remove="Assets\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Icons\iconsAnalytics60.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsCart60.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsLock48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsPhone48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsStore60.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsUser64.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsVietnam48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
     <ProjectReference Include="..\DTO\DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Icons\" />
-    <Folder Include="Assets\Images\" />
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Common\" />
     <Folder Include="Helpers\" />
     <Folder Include="Resources\Themes\" />
     <Folder Include="Resources\Templates\" />
     <Folder Include="Resources\Styles\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\bglogin.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
