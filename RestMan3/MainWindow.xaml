@@ -5,8 +5,582 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RestMan3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="1350"
+        WindowState="Maximized"
+        Icon="/Assets/Images/logo.png">
+    <Window.Resources>
+        <!-- Colors -->
+        <SolidColorBrush x:Key="PrimaryBlue" Color="#0066FF"/>
+        <SolidColorBrush x:Key="LightBlue" Color="#E6F0FF"/>
+        <SolidColorBrush x:Key="DarkText" Color="#1A1A1A"/>
+        <SolidColorBrush x:Key="GrayText" Color="#666666"/>
+        <SolidColorBrush x:Key="BorderGray" Color="#E0E0E0"/>
 
+        <!-- Navigation Menu Style -->
+        <Style x:Key="NavMenuStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Padding" Value="20,0"/>
+            <Setter Property="Height" Value="56"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#0052CC"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Submenu Item Style -->
+        <Style x:Key="SubMenuItemStyle" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="20,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Left" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Popup Style -->
+        <Style x:Key="SubMenuPopupStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Opacity="0.2" 
+                                    BlurRadius="10" ShadowDepth="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Top Icon Button Style -->
+        <Style x:Key="TopIconButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource GrayText}"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="4"
+                                Padding="8">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F0F0F0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Action Button Style (White buttons on right) -->
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryBlue}"/>
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Back to Top Button Style -->
+        <Style x:Key="BackToTopButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#00AEEF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="24">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#0099D6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Header Bar -->
+        <Border Grid.Row="0" Background="White" 
+                BorderBrush="{StaticResource BorderGray}" 
+                BorderThickness="0,0,0,1">
+            <Grid Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Source="/Assets/Images/logo.png" Width="50" Height="50" Margin="0,0,10,0"/>
+                    <TextBlock Text="Dehuhu" FontSize="20" FontWeight="Bold" 
+                               Foreground="{StaticResource DarkText}" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Top Right Icons -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Style="{StaticResource TopIconButtonStyle}" Margin="5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Assets/Icons/iconsWallet48.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Thanh toán" FontSize="13"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource TopIconButtonStyle}" Margin="5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Assets/Icons/iconsBill48.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Vay vốn" FontSize="13"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource TopIconButtonStyle}" Margin="5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Assets/Icons/iconsDollarBag48.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Hóa đơn điện tử" FontSize="13"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- User Area -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Style="{StaticResource TopIconButtonStyle}">
+                        <Image Source="/Assets/Icons/iconsChatBubble48.png"/>
+                    </Button>
+                    <Button Style="{StaticResource TopIconButtonStyle}">
+                        <Image Source="/Assets/Icons/iconsVietnam48.png"/>
+                    </Button>
+                    <Button Style="{StaticResource TopIconButtonStyle}">
+                        <Image Source="/Assets/Icons/iconsNotification48.png"/>
+                    </Button>
+                    <Button Style="{StaticResource TopIconButtonStyle}">
+                        <Image Source="/Assets/Icons/iconsSettings64.png"/>
+                    </Button>
+                    <Button Style="{StaticResource TopIconButtonStyle}">
+                        <Image Source="/Assets/Icons/iconsProfile64.png"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Navigation Bar -->
+        <Border Grid.Row="1" Background="{StaticResource PrimaryBlue}">
+            <Grid Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Navigation Buttons -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button Content="Tổng quan" Style="{StaticResource NavMenuStyle}" Click="NavButton_Click"/>
+
+                    <!-- Hàng hóa with submenu -->
+                    <Grid x:Name="HangHoaMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="HangHoaButton" Content="Hàng hóa" 
+                                Style="{StaticResource NavMenuStyle}" Height="56" VerticalAlignment="Top"/>
+                        <Popup x:Name="HangHoaPopup" 
+                               PlacementTarget="{Binding ElementName=HangHoaButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Danh mục" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Thiết lập giá" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Kiểm kho" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Phòng/Bàn with submenu -->
+                    <Grid x:Name="PhongBanMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="PhongBanButton" Content="Phòng/Bàn" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="PhongBanPopup" 
+                               PlacementTarget="{Binding ElementName=PhongBanButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Danh sách phòng bàn" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Gọi món qua mã QR" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Giao dịch with submenu -->
+                    <Grid x:Name="GiaoDichMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="GiaoDichButton" Content="Giao dịch" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="GiaoDichPopup" 
+                               PlacementTarget="{Binding ElementName=GiaoDichButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Hóa đơn" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Trả hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Nhập hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Trả hàng nhập" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Xuất hủy" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Đối tác with submenu -->
+                    <Grid x:Name="DoiTacMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="DoiTacButton" Content="Đối tác" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="DoiTacPopup" 
+                               PlacementTarget="{Binding ElementName=DoiTacButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Khách Hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Tương tác" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Nhà cung cấp" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Đối tác giao hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Nhân viên with submenu -->
+                    <Grid x:Name="NhanVienMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="NhanVienButton" Content="Nhân viên" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="NhanVienPopup" 
+                               PlacementTarget="{Binding ElementName=NhanVienButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Danh sách nhân viên" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Lịch làm việc" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Bảng chấm công" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Bảng lương" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Bảng hoa hồng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Thiết lập nhân viên" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Bán Online with submenu -->
+                    <Grid x:Name="BanOnlineMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="BanOnlineButton" Content="Bán Online" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="BanOnlinePopup" 
+                               PlacementTarget="{Binding ElementName=BanOnlineButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Bán hàng Zalo" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Bán hàng Facebook" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Website bán hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                    <Button Content="Sổ quỹ" Style="{StaticResource NavMenuStyle}" Click="NavButton_Click"/>
+
+                    <!-- Báo cáo with submenu -->
+                    <Grid x:Name="BaoCaoMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="BaoCaoButton" Content="Báo cáo" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="BaoCaoPopup" 
+                               PlacementTarget="{Binding ElementName=BaoCaoButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Cuối Ngày" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Bán hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Hàng hóa" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Khách hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Nhà cung cấp" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Nhân viên" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Kênh bán hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Tài chính" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Thuế & Kế toán with submenu -->
+                    <Grid x:Name="ThueKeToanMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button x:Name="ThueKeToanButton" Content="Thuế &amp; kế toán" 
+                                Style="{StaticResource NavMenuStyle}"/>
+                        <Popup x:Name="ThueKeToanPopup" 
+                               PlacementTarget="{Binding ElementName=ThueKeToanButton}"
+                               Placement="Bottom"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Thuế &amp; kế toán" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Hóa đơn điện tử" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Action Buttons -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Style="{StaticResource ActionButtonStyle}">
+                        <TextBlock Text="📥" FontSize="20"/>
+                    </Button>
+                    <Button Style="{StaticResource ActionButtonStyle}">
+                        <TextBlock Text="✓" FontSize="20"/>
+                    </Button>
+                    <Button Style="{StaticResource ActionButtonStyle}">
+                        <TextBlock Text="📋" FontSize="20"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area with ScrollViewer -->
+        <ScrollViewer Grid.Row="2" x:Name="MainScrollViewer" 
+                      VerticalScrollBarVisibility="Auto"
+                      Background="#F5F5F5">
+            <Grid Margin="20">
+                <!-- Content will be loaded here dynamically -->
+                <Border Background="White" CornerRadius="8" Padding="20">
+                    <TextBlock Text="Nội dung trang sẽ được load động tại đây" 
+                               FontSize="16" 
+                               Foreground="{StaticResource GrayText}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+
+        <!-- Back to Top Button -->
+        <Button Grid.Row="2" 
+                x:Name="BackToTopButton"
+                Style="{StaticResource BackToTopButtonStyle}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,30,30"
+                Click="BackToTopButton_Click"
+                Visibility="Collapsed">
+            <TextBlock Text="↑" FontSize="24" FontWeight="Bold"/>
+        </Button>
+
+        <!-- Support Button (Hỗ trợ) -->
+        <Button Grid.Row="2"
+                x:Name="SupportButton"
+                Background="#0066FF"
+                Foreground="White"
+                Width="80"
+                Height="40"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,30,90"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="SupportButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="20">
+                        <StackPanel Orientation="Horizontal" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="💬" FontSize="16" Margin="0,0,5,0"/>
+                            <TextBlock Text="Hỗ trợ" FontSize="13" FontWeight="Medium"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#0066FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#0052CC"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
+
 </Window>

@@ -21,12 +21,12 @@ namespace RestMan3.Views
     {
         public LoginView()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            PasswordBox pb = sender as PasswordBox;
+            PasswordBox? pb = sender as PasswordBox;
             if (pb != null)
             {
                 // Nếu độ dài mật khẩu > 0 thì ẩn Hint, ngược lại thì hiện
