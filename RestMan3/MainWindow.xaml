@@ -117,8 +117,8 @@
         <Style x:Key="ActionButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="{StaticResource PrimaryBlue}"/>
-            <Setter Property="Width" Value="48"/>
-            <Setter Property="Height" Value="48"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
             <Setter Property="Margin" Value="5,0"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
@@ -180,13 +180,13 @@
                 BorderThickness="0,0,0,1">
             <Grid Margin="20,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- Logo -->
-                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
                     <Image Source="/Assets/Images/logo.png" Width="50" Height="50" Margin="0,0,10,0"/>
                     <TextBlock Text="Dehuhu" FontSize="20" FontWeight="Bold" 
                                Foreground="{StaticResource DarkText}" VerticalAlignment="Center"/>
@@ -198,40 +198,113 @@
                     <Button Style="{StaticResource TopIconButtonStyle}" Margin="5,0">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Assets/Icons/iconsWallet48.png" Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="Thanh toán" FontSize="13"/>
+                            <TextBlock Text="Thanh toán" FontSize="13" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource TopIconButtonStyle}" Margin="5,0">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Assets/Icons/iconsBill48.png" Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="Vay vốn" FontSize="13"/>
+                            <TextBlock Text="Vay vốn" FontSize="13" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource TopIconButtonStyle}" Margin="5,0">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Assets/Icons/iconsDollarBag48.png" Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="Hóa đơn điện tử" FontSize="13"/>
+                            <TextBlock Text="Hóa đơn điện tử" FontSize="13" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
 
                 <!-- User Area -->
-                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <Button Style="{StaticResource TopIconButtonStyle}">
                         <Image Source="/Assets/Icons/iconsChatBubble48.png"/>
                     </Button>
                     <Button Style="{StaticResource TopIconButtonStyle}">
-                        <Image Source="/Assets/Icons/iconsVietnam48.png"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Assets/Icons/iconsVietnam48.png"  Margin="0,0,5,0"/>
+                            <TextBlock Text="Việt Nam" FontSize="14" VerticalAlignment="Center"
+                                       FontWeight="Bold"/>
+                        </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource TopIconButtonStyle}">
+                    <Button Style="{StaticResource TopIconButtonStyle}" ToolTip="Thông báo">
                         <Image Source="/Assets/Icons/iconsNotification48.png"/>
                     </Button>
-                    <Button Style="{StaticResource TopIconButtonStyle}">
-                        <Image Source="/Assets/Icons/iconsSettings64.png"/>
-                    </Button>
-                    <Button Style="{StaticResource TopIconButtonStyle}">
-                        <Image Source="/Assets/Icons/iconsProfile64.png"/>
-                    </Button>
+                    
+                    <!-- Cài đặt with submenu -->
+                    <Grid x:Name="CaiDatMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button Style="{StaticResource TopIconButtonStyle}">
+                            <Image Source="/Assets/Icons/iconsSettings64.png"/>
+                        </Button>
+                        <Popup x:Name="CaiDatPopup" 
+                               PlacementTarget="{Binding ElementName=CaiDatButton}"
+                               Placement="Custom"
+                               CustomPopupPlacementCallback="PlacePopupRightAligned"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="200" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Thiết lập cửa hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Quản lý mẫu in" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Quản lý người dùng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Quản lý chi nhánh" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Quản lý lý do hủy món" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Quản lý ghi chú món" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Lịch sử thao tác" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Xóa dữ liệu dùng thử" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                    
+                    <!-- Thông tin with submenu -->
+                    <Grid x:Name="ThongTinMenu"
+                          MouseEnter="MenuContainer_MouseEnter"
+                          MouseLeave="MenuContainer_MouseLeave">
+                        <Button Style="{StaticResource TopIconButtonStyle}">
+                            <Image Source="/Assets/Icons/iconsProfile64.png"/>
+                        </Button>
+                        <Popup x:Name="ThongTinPopup" 
+                               PlacementTarget="{Binding ElementName=ThongTinButton}"
+                               Placement="Custom"
+                               CustomPopupPlacementCallback="PlacePopupRightAligned"
+                               StaysOpen="True"
+                               AllowsTransparency="True">
+                            <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                    MinWidth="100" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button Content="Tài khoản" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Thông tin gian hàng" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                    <Button Content="Đăng xuất" 
+                                            Style="{StaticResource SubMenuItemStyle}"
+                                            Click="SubMenuItem_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
                 </StackPanel>
             </Grid>
         </Border>
@@ -503,14 +576,14 @@
 
                 <!-- Action Buttons -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button Style="{StaticResource ActionButtonStyle}">
-                        <TextBlock Text="📥" FontSize="20"/>
+                    <Button Style="{StaticResource ActionButtonStyle}" ToolTip="Nhà bếp">
+                        <Image Source="/Assets/Icons/iconsServiceBell.png" Width="20" Height="20"/>
                     </Button>
-                    <Button Style="{StaticResource ActionButtonStyle}">
-                        <TextBlock Text="✓" FontSize="20"/>
+                    <Button Style="{StaticResource ActionButtonStyle}" ToolTip="Lễ tân">
+                        <Image Source="/Assets/Icons/iconsToday48.png" Width="20" Height="20"/>
                     </Button>
-                    <Button Style="{StaticResource ActionButtonStyle}">
-                        <TextBlock Text="📋" FontSize="20"/>
+                    <Button Style="{StaticResource ActionButtonStyle}" ToolTip="Thu ngân">
+                        <Image Source="/Assets/Icons/iconsFile48.png" Width="20" Height="20"/>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -549,23 +622,23 @@
                 x:Name="SupportButton"
                 Background="#0066FF"
                 Foreground="White"
-                Width="80"
+                Width="90"
                 Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Margin="0,0,30,90"
+                Margin="0,0,30,30"
                 BorderThickness="0"
                 Cursor="Hand"
                 Click="SupportButton_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
-                            CornerRadius="20">
+                            CornerRadius="10">
                         <StackPanel Orientation="Horizontal" 
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="💬" FontSize="16" Margin="0,0,5,0"/>
-                            <TextBlock Text="Hỗ trợ" FontSize="13" FontWeight="Medium"/>
+                            <Image Source="/Assets/Icons/iconsChatBubbleWhite.png" Width="20" Height="20" Margin="0, 0, 5, 0"/>
+                            <TextBlock Text="Hỗ trợ" FontSize="14" FontWeight="Medium"/>
                         </StackPanel>
                     </Border>
                 </ControlTemplate>

@@ -127,6 +127,14 @@ public partial class MainWindow : Window
         {
             ThueKeToanPopup.IsOpen = true;
         }
+        else if (menuGrid.Name == "ThongTinMenu")
+        {
+            ThongTinPopup.IsOpen = true;
+        }
+        else if (menuGrid.Name == "CaiDatMenu")
+        {
+            CaiDatPopup.IsOpen = true;
+        }
     }
 
     private void MenuContainer_MouseLeave(object sender, MouseEventArgs e)
@@ -173,6 +181,8 @@ public partial class MainWindow : Window
                IsMouseOverElement(BanOnlineMenu, mousePosition) ||
                IsMouseOverElement(BaoCaoMenu, mousePosition) ||
                IsMouseOverElement(ThueKeToanMenu, mousePosition) ||
+               IsMouseOverElement(ThongTinMenu, mousePosition) ||
+               IsMouseOverElement(CaiDatMenu, mousePosition) ||
                IsMouseOverPopup(HangHoaPopup) ||
                IsMouseOverPopup(PhongBanPopup) ||
                IsMouseOverPopup(GiaoDichPopup) ||
@@ -180,7 +190,9 @@ public partial class MainWindow : Window
                IsMouseOverPopup(NhanVienPopup) ||
                IsMouseOverPopup(BanOnlinePopup) ||
                IsMouseOverPopup(BaoCaoPopup) ||
-               IsMouseOverPopup(ThueKeToanPopup);
+               IsMouseOverPopup(ThueKeToanPopup) ||
+               IsMouseOverPopup(ThongTinPopup) ||
+               IsMouseOverPopup(CaiDatPopup);
     }
 
     private bool IsMouseOverElement(UIElement element, Point mousePosition)
@@ -208,7 +220,9 @@ public partial class MainWindow : Window
                NhanVienPopup.IsOpen || 
                BanOnlinePopup.IsOpen || 
                BaoCaoPopup.IsOpen || 
-               ThueKeToanPopup.IsOpen;
+               ThueKeToanPopup.IsOpen ||
+               ThongTinPopup.IsOpen ||
+               CaiDatPopup.IsOpen;
     }
 
     private void CloseTimer_Tick(object sender, EventArgs e)
@@ -234,6 +248,8 @@ public partial class MainWindow : Window
         BanOnlinePopup.IsOpen = false;
         BaoCaoPopup.IsOpen = false;
         ThueKeToanPopup.IsOpen = false;
+        ThongTinPopup.IsOpen = false;
+        CaiDatPopup.IsOpen = false;
     }
 
     private void NavButton_Click(object sender, RoutedEventArgs e)
@@ -264,5 +280,18 @@ public partial class MainWindow : Window
             grid.Children.Clear();
             grid.Children.Add(content);
         }
+    }
+
+    public CustomPopupPlacement[] PlacePopupRightAligned(Size popupSize, Size targetSize, Point offset)
+    {
+        // popupSize: Kích thước của menu thả xuống
+        // targetSize: Kích thước của cái Button
+
+        // Tính toán để cạnh phải trùng nhau: 
+        // Tọa độ X = Chiều rộng Button - Chiều rộng Popup
+        double x = targetSize.Width - popupSize.Width;
+        double y = targetSize.Height;
+
+        return new[] { new CustomPopupPlacement(new Point(x, y), PopupPrimaryAxis.None) };
     }
 }
