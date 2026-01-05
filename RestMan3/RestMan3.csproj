@@ -16,17 +16,25 @@
     <None Remove="Assets\Icons\iconsCart60.png" />
     <None Remove="Assets\Icons\iconsChatBubble48.png" />
     <None Remove="Assets\Icons\iconsChatBubbleWhite.png" />
+    <None Remove="Assets\Icons\iconsClipboardBlue48.png" />
+    <None Remove="Assets\Icons\iconsClipboardPink48.png" />
+    <None Remove="Assets\Icons\iconsDollar48.png" />
     <None Remove="Assets\Icons\iconsDollarBag48.png" />
+    <None Remove="Assets\Icons\iconsDownArrow50.png" />
     <None Remove="Assets\Icons\iconsFile48.png" />
     <None Remove="Assets\Icons\iconsLock48.png" />
     <None Remove="Assets\Icons\iconsNotification48.png" />
+    <None Remove="Assets\Icons\iconsPencil64.png" />
     <None Remove="Assets\Icons\iconsPhone48.png" />
     <None Remove="Assets\Icons\iconsProfile64.png" />
+    <None Remove="Assets\Icons\iconsRight30.png" />
     <None Remove="Assets\Icons\iconsServiceBell.png" />
     <None Remove="Assets\Icons\iconsSettings64.png" />
     <None Remove="Assets\Icons\iconsStore60.png" />
     <None Remove="Assets\Icons\iconsStore70.png" />
     <None Remove="Assets\Icons\iconsToday48.png" />
+    <None Remove="Assets\Icons\iconsUp24.png" />
+    <None Remove="Assets\Icons\iconsUser48.png" />
     <None Remove="Assets\Icons\iconsUser64.png" />
     <None Remove="Assets\Icons\iconsVietnam48.png" />
     <None Remove="Assets\Icons\iconsWallet48.png" />
@@ -53,7 +61,19 @@
     <Resource Include="Assets\Icons\iconsChatBubbleWhite.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsClipboardBlue48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsClipboardPink48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsDollar48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsDollarBag48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsDownArrow50.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsFile48.png">
@@ -65,10 +85,16 @@
     <Resource Include="Assets\Icons\iconsNotification48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsPencil64.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsPhone48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsProfile64.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsRight30.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsServiceBell.png">
@@ -81,6 +107,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsToday48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsUp24.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsUser48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsUser64.png">
