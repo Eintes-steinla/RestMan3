@@ -16,18 +16,28 @@
     <None Remove="Assets\Icons\iconsCart60.png" />
     <None Remove="Assets\Icons\iconsChatBubble48.png" />
     <None Remove="Assets\Icons\iconsChatBubbleWhite.png" />
+    <None Remove="Assets\Icons\iconsChevronUp48.png" />
     <None Remove="Assets\Icons\iconsClipboardBlue48.png" />
     <None Remove="Assets\Icons\iconsClipboardPink48.png" />
     <None Remove="Assets\Icons\iconsDollar48.png" />
     <None Remove="Assets\Icons\iconsDollarBag48.png" />
     <None Remove="Assets\Icons\iconsDownArrow50.png" />
     <None Remove="Assets\Icons\iconsFile48.png" />
+    <None Remove="Assets\Icons\iconsImport52.png" />
     <None Remove="Assets\Icons\iconsLock48.png" />
+    <None Remove="Assets\Icons\iconsLogout52.png" />
+    <None Remove="Assets\Icons\iconsMenu50.png" />
+    <None Remove="Assets\Icons\iconsNotebook40.png" />
     <None Remove="Assets\Icons\iconsNotification48.png" />
     <None Remove="Assets\Icons\iconsPencil64.png" />
     <None Remove="Assets\Icons\iconsPhone48.png" />
+    <None Remove="Assets\Icons\iconsPlus60.png" />
+    <None Remove="Assets\Icons\iconsPlusBlack60.png" />
     <None Remove="Assets\Icons\iconsProfile64.png" />
+    <None Remove="Assets\Icons\iconsQuestionMark64.png" />
+    <None Remove="Assets\Icons\iconsQuestionMarkBlack48.png" />
     <None Remove="Assets\Icons\iconsRight30.png" />
+    <None Remove="Assets\Icons\iconsSearch48.png" />
     <None Remove="Assets\Icons\iconsServiceBell.png" />
     <None Remove="Assets\Icons\iconsSettings64.png" />
     <None Remove="Assets\Icons\iconsStore60.png" />
@@ -61,6 +71,9 @@
     <Resource Include="Assets\Icons\iconsChatBubbleWhite.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsChevronUp48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsClipboardBlue48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -79,7 +92,19 @@
     <Resource Include="Assets\Icons\iconsFile48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsImport52.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsLock48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsLogout52.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsMenu50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsNotebook40.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsNotification48.png">
@@ -91,10 +116,22 @@
     <Resource Include="Assets\Icons\iconsPhone48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsPlus60.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsPlusBlack60.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsProfile64.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsQuestionMark64.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsRight30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsSearch48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsServiceBell.png">

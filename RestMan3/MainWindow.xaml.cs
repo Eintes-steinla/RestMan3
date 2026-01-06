@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using System.Windows.Controls.Primitives;
 using RestMan3.Views;
+using RestMan3.Views.Goods;
 
 namespace RestMan3;
 
@@ -91,8 +92,168 @@ public partial class MainWindow : Window
             string menuItem = button.Content.ToString()!;
             CloseAllPopups();
 
-            // Tùy biến logic chuyển trang tại đây
-            MessageBox.Show($"Đang mở trang: {menuItem}", "Thông báo");
+            // Xử lý chuyển trang dựa vào tên menu
+            switch (menuItem)
+            {
+                // Menu Hàng hóa
+                case "Danh mục":
+                    LoadPage(new CategoryView());
+                    break;
+                case "Thiết lập giá":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Kiểm kho":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Phòng/Bàn
+                case "Danh sách phòng bàn":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Gọi món qua mã QR":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Giao dịch
+                case "Hóa đơn":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Trả hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Nhập hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Trả hàng nhập":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Xuất hủy":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Đối tác
+                case "Khách Hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Tương tác":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Nhà cung cấp":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Đối tác giao hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Nhân viên
+                case "Danh sách nhân viên":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Lịch làm việc":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Bảng chấm công":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Bảng lương":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Bảng hoa hồng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Thiết lập nhân viên":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Bán Online
+                case "Bán hàng Zalo":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Bán hàng Facebook":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Website bán hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Báo cáo
+                case "Cuối Ngày":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Bán hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Hàng hóa":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Khách hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Nhân viên":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Kênh bán hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Tài chính":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Thuế & Kế toán
+                case "Thuế & kế toán":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Hóa đơn điện tử":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Cài đặt
+                case "Thiết lập cửa hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Quản lý mẫu in":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Quản lý người dùng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Quản lý chi nhánh":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Quản lý lý do hủy món":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Quản lý ghi chú món":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Lịch sử thao tác":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Xóa dữ liệu dùng thử":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+
+                // Menu Thông tin
+                case "Tài khoản":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Thông tin gian hàng":
+                    MessageBox.Show($"Trang {menuItem} đang được phát triển", "Thông báo");
+                    break;
+                case "Đăng xuất":
+                    var result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận",
+                        MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        // Xử lý đăng xuất
+                        Application.Current.Shutdown();
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show($"Đang mở trang: {menuItem}", "Thông báo");
+                    break;
+            }
         }
     }
 

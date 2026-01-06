@@ -5,6 +5,9 @@
     <Compile Update="Views\DashBoardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Goods\CategoryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
