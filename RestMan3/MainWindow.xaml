@@ -9,12 +9,6 @@
         WindowState="Maximized"
         Icon="/Assets/Images/logo.png">
     <Window.Resources>
-        <!-- Colors -->
-        <SolidColorBrush x:Key="PrimaryBlue" Color="#0066FF"/>
-        <SolidColorBrush x:Key="LightBlue" Color="#E6F0FF"/>
-        <SolidColorBrush x:Key="DarkText" Color="#1A1A1A"/>
-        <SolidColorBrush x:Key="GrayText" Color="#666666"/>
-        <SolidColorBrush x:Key="BorderGray" Color="#E0E0E0"/>
 
         <!-- Navigation Menu Style -->
         <Style x:Key="NavMenuStyle" TargetType="Button">

@@ -44,3 +44,8 @@ E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\ref\RestMan3.dll
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\App.baml
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\CategoryView.g.cs
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\CategoryView.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\Button.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\Colors.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\ComboBox.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\CheckBox.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\RadioButton.baml

@@ -7,70 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="2000" d:DesignWidth="1200">
     <UserControl.Resources>
-        <!-- Colors -->
-        <SolidColorBrush x:Key="PrimaryGreen" Color="#10B981"/>
-        <SolidColorBrush x:Key="PrimaryBlue" Color="#0066FF"/>
-        <SolidColorBrush x:Key="DarkText" Color="#1A1A1A"/>
-        <SolidColorBrush x:Key="GrayText" Color="#666666"/>
-        <SolidColorBrush x:Key="BorderGray" Color="#E0E0E0"/>
-        <SolidColorBrush x:Key="LightGray" Color="#F5F5F5"/>
-
-        <!-- Button Styles -->
-        <Style x:Key="GreenButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource PrimaryGreen}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Padding" Value="15,0"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                                CornerRadius="4"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" 
-                                            VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#0EA574"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style x:Key="IconButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BorderGray}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Width" Value="40"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
-                            <ContentPresenter HorizontalAlignment="Center" 
-                                            VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource LightGray}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
+        
         <!-- DataGrid Style -->
         <Style x:Key="ModernDataGrid" TargetType="DataGrid">
             <Setter Property="Background" Value="White"/>
@@ -143,19 +80,6 @@
             <Setter Property="Margin" Value="0,0,0,10"/>
         </Style>
 
-        <Style x:Key="FilterCheckBoxStyle" TargetType="CheckBox">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Foreground" Value="{StaticResource DarkText}"/>
-            <Setter Property="Margin" Value="0,5"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
-
-        <Style x:Key="FilterRadioButtonStyle" TargetType="RadioButton">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Foreground" Value="{StaticResource DarkText}"/>
-            <Setter Property="Margin" Value="0,5"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
     </UserControl.Resources>
 
     <Grid Background="{StaticResource LightGray}">
@@ -200,9 +124,9 @@
                                 <TextBlock Text="Loại thực đơn" FontSize="14" FontWeight="Bold" Style="{StaticResource FilterHeaderStyle}" Margin="0"/>
                                 <Image Source="/Assets/Icons/iconsChevronUp48.png" Width="15" Height="15" HorizontalAlignment="Right"/>
                             </Grid>
-                            <CheckBox Content="Đồ ăn" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Đồ uống" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Khác" Style="{StaticResource FilterCheckBoxStyle}"/>
+                            <CheckBox Content="Đồ ăn" IsChecked="True" Style="{StaticResource ModernCheckBox}" />
+                            <CheckBox Content="Đồ uống" Style="{StaticResource ModernCheckBox}"/>
+                            <CheckBox Content="Khác" Style="{StaticResource ModernCheckBox}"/>
                         </StackPanel>
                     </Border>
 
@@ -213,12 +137,12 @@
                                 <TextBlock Text="Loại hàng" FontSize="14" FontWeight="Bold" Style="{StaticResource FilterHeaderStyle}" Margin="0"/>
                                 <Image Source="/Assets/Icons/iconsChevronUp48.png" Width="15" Height="15" HorizontalAlignment="Right"/>
                             </Grid>
-                            <CheckBox Content="Hàng hóa thường" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Chế biến" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Dịch vụ" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Combo - Đóng gói" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Combo tùy chọn" Style="{StaticResource FilterCheckBoxStyle}"/>
-                            <CheckBox Content="Buffet gọi món" Style="{StaticResource FilterCheckBoxStyle}"/>
+                            <CheckBox Content="Hàng hóa thường" Style="{StaticResource ModernCheckBox}"/>
+                            <CheckBox Content="Chế biến" Style="{StaticResource ModernCheckBox}"/>
+                            <CheckBox Content="Dịch vụ" Style="{StaticResource ModernCheckBox}"/>
+                            <CheckBox Content="Combo - Đóng gói" Style="{StaticResource ModernCheckBox}"/>
+                            <CheckBox Content="Combo tùy chọn" Style="{StaticResource ModernCheckBox}"/>
+                            <CheckBox Content="Buffet gọi món" Style="{StaticResource ModernCheckBox}"/>
                         </StackPanel>
                     </Border>
 
@@ -259,12 +183,12 @@
                             <StackPanel x:Name="CategoryList">
                                 <StackPanel>
                                     <RadioButton Content="Tất cả" 
-                                                 Style="{StaticResource FilterRadioButtonStyle}"
+                                                 Style="{StaticResource ModernRadioButton}"
                                                  IsChecked="True" />
                                     <RadioButton Content="Súp" 
-                                                 Style="{StaticResource FilterRadioButtonStyle}" />
+                                                 Style="{StaticResource ModernRadioButton}" />
                                     <RadioButton Content="Tea" 
-                                                 Style="{StaticResource FilterRadioButtonStyle}" />
+                                                 Style="{StaticResource ModernRadioButton}" />
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -279,20 +203,20 @@
 
                             </Grid>
                             <RadioButton Content="Tất cả" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          IsChecked="True"
                                          GroupName="Stock"/>
                             <RadioButton Content="Dưới định mức tồn" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          GroupName="Stock"/>
                             <RadioButton Content="Vượt định mức tồn" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          GroupName="Stock"/>
                             <RadioButton Content="Còn hàng trong kho" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          GroupName="Stock"/>
                             <RadioButton Content="Hết hàng trong kho" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          GroupName="Stock"/>
                         </StackPanel>
                     </Border>
@@ -305,14 +229,14 @@
                                 <Image Source="/Assets/Icons/iconsChevronUp48.png" Width="15" Height="15" HorizontalAlignment="Right"/>
                             </Grid>
                             <RadioButton Content="Hàng đang kinh doanh" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          IsChecked="True"
                                          GroupName="Display"/>
                             <RadioButton Content="Hàng ngừng kinh doanh" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          GroupName="Display"/>
                             <RadioButton Content="Tất cả" 
-                                         Style="{StaticResource FilterRadioButtonStyle}"
+                                         Style="{StaticResource ModernRadioButton}"
                                          GroupName="Display"/>
                         </StackPanel>
                     </Border>

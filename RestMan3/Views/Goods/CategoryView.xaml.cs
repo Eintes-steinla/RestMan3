@@ -115,6 +115,7 @@ namespace RestMan3.Views.Goods
                 currentTextBox.Foreground = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#666666"));
             }
         }
+
     }
 
     // Product Model
