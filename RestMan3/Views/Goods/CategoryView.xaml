@@ -325,9 +325,9 @@
                                        FontSize="13"
                                        Margin="0,0,0,5"/>
                             <ComboBox x:Name="RecordsPerPageComboBox"
-                                      SelectedIndex="0"
-                                      Height="35"
-                                      FontSize="14">
+                                      Style="{StaticResource ModernComboBox}"
+                                      ItemContainerStyle="{StaticResource ModernComboBoxItem}"
+                                      SelectedIndex="0">
                                 <ComboBoxItem Content="10"/>
                                 <ComboBoxItem Content="25"/>
                                 <ComboBoxItem Content="50"/>
