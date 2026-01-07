@@ -49,3 +49,6 @@ E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\Colors.ba
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\ComboBox.baml
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\CheckBox.baml
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\RadioButton.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Test.g.cs
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Test.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\DataGrid.baml

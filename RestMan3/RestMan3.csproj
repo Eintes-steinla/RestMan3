@@ -22,6 +22,7 @@
     <None Remove="Assets\Icons\iconsDollar48.png" />
     <None Remove="Assets\Icons\iconsDollarBag48.png" />
     <None Remove="Assets\Icons\iconsDownArrow50.png" />
+    <None Remove="Assets\Icons\iconsEnd60.png" />
     <None Remove="Assets\Icons\iconsFile48.png" />
     <None Remove="Assets\Icons\iconsImport52.png" />
     <None Remove="Assets\Icons\iconsLock48.png" />
@@ -40,9 +41,13 @@
     <None Remove="Assets\Icons\iconsSearch48.png" />
     <None Remove="Assets\Icons\iconsServiceBell.png" />
     <None Remove="Assets\Icons\iconsSettings64.png" />
+    <None Remove="Assets\Icons\iconsStart60.png" />
+    <None Remove="Assets\Icons\iconsStarts60.png" />
     <None Remove="Assets\Icons\iconsStore60.png" />
     <None Remove="Assets\Icons\iconsStore70.png" />
     <None Remove="Assets\Icons\iconsToday48.png" />
+    <None Remove="Assets\Icons\iconsTriangleArrowLeft48.png" />
+    <None Remove="Assets\Icons\iconsTriangleArrowRight48.png" />
     <None Remove="Assets\Icons\iconsUp24.png" />
     <None Remove="Assets\Icons\iconsUser48.png" />
     <None Remove="Assets\Icons\iconsUser64.png" />
@@ -87,6 +92,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsDownArrow50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsEnd60.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsFile48.png">
@@ -140,10 +148,19 @@
     <Resource Include="Assets\Icons\iconsSettings64.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsStarts60.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsStore60.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsToday48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsTriangleArrowLeft48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsTriangleArrowRight48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsUp24.png">

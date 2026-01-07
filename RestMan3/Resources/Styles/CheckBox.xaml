@@ -9,10 +9,11 @@
         <Setter Property="Foreground" Value="{StaticResource DarkText}"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/> <Setter Property="Template">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
-                    <Grid x:Name="RootGrid" Margin="0,0,0,5" Background="Transparent">
+                    <Grid x:Name="RootGrid" Margin="0,0,0,0" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -33,12 +34,12 @@
                         </Grid>
 
                         <ContentPresenter Grid.Column="1"
-                                          Margin="10,0,0,0" 
+                                          Margin="{TemplateBinding Padding}" 
                                           VerticalAlignment="Center"
                                           HorizontalAlignment="Left"
                                           RecognizesAccessKey="True"/>
                     </Grid>
-                    
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="Box" Property="Background" Value="{StaticResource PrimaryBlue}"/>
@@ -55,5 +56,12 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style x:Key="FormCheckBoxStyle" 
+       TargetType="CheckBox" 
+       BasedOn="{StaticResource ModernCheckBox}">
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="Padding" Value="10,0,0,0"/>
     </Style>
 </ResourceDictionary>

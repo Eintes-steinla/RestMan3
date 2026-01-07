@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="/Resources/Styles/ComboBox.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/CheckBox.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/RadioButton.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/DataGrid.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Submenu Item Style -->
