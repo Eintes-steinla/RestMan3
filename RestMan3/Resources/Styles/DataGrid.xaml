@@ -67,6 +67,7 @@
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="SelectionUnit" Value="FullRow"/>
         <Setter Property="RowHeaderWidth" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
         <Setter Property="CanUserResizeColumns" Value="False"/>
         <Setter Property="ColumnHeaderStyle" Value="{StaticResource ModernColumnHeader}"/>

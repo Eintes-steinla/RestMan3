@@ -4,7 +4,6 @@ E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\MainWindow.g.cs
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\DashBoardView.g.cs
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\LoginView.g.cs
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\App.g.cs
-E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\RestMan3_Content.g.cs
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\RestMan3_MarkupCompile.cache
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\RestMan3_MarkupCompile.lref
 E:\vstimPJ\RestMan3\RestMan3\bin\Debug\net8.0-windows\RestMan3.exe
