@@ -15,4 +15,9 @@
     <ProjectReference Include="..\DTO\DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validators\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

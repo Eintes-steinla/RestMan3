@@ -145,8 +145,10 @@ CREATE TABLE Customer(
 -- Liên kết 1-1 để map UserAccount <-> Employee/Customer
 CREATE TABLE AccountProfileLink(
     UserID INT NOT NULL PRIMARY KEY,
-    EmployeeID INT NULL UNIQUE,
-    CustomerID INT NULL UNIQUE,
+    EmployeeID INT NULL,
+    CustomerID INT NULL,
+    
+    -- Foreign Keys
     CONSTRAINT FK_APL_User FOREIGN KEY(UserID) REFERENCES UserAccount(UserID),
     CONSTRAINT FK_APL_Emp FOREIGN KEY(EmployeeID) REFERENCES Employee(EmployeeID),
     CONSTRAINT FK_APL_Cust FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)
