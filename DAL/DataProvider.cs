@@ -51,7 +51,7 @@ namespace DAL
         // Connection String đến SQL Server
         // TODO: Thay đổi theo môi trường của bạn
         private readonly string _connectionString = @"
-            Data Source=localhost\\SQLEXPRESS;
+            Data Source=.\SQLEXPRESS;
             Initial Catalog=RestMan3;
             Integrated Security=True;
             Connect Timeout=30;
@@ -107,8 +107,10 @@ namespace DAL
                     return connection.State == ConnectionState.Open;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                // Ghi log lỗi ra Console hoặc Debug để xem
+                System.Diagnostics.Debug.WriteLine("LỖI KẾT NỐI: " + ex.Message);
                 return false;
             }
         }
