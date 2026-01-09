@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 E:\vstimPJ\RestMan3\RestMan3\App.xaml
-21727942632
-22-932332663
-5156656291
-205-38793384
-MainWindow.xaml;Views\LoginView.xaml;
+11293606388
+
+142042734824
+2332066173317
+MainWindow.xaml;Resources\Styles\Button.xaml;Resources\Styles\CheckBox.xaml;Resources\Styles\Colors.xaml;Resources\Styles\ComboBox.xaml;Resources\Styles\DataGrid.xaml;Resources\Styles\RadioButton.xaml;Views\DashBoardView.xaml;Views\Goods\CategoryView.xaml;Views\LoginView.xaml;Views\Test.xaml;
 
 True
 
