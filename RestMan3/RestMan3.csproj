@@ -215,7 +215,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Converters\" />
     <Folder Include="Resources\Themes\" />
     <Folder Include="Resources\Templates\" />

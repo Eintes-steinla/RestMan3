@@ -244,13 +244,40 @@
 
                     <!-- Action Buttons Left -->
                     <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Style="{StaticResource GreenButtonStyle}" 
+                        <Grid>
+                            <Button Style="{StaticResource GreenButtonStyle}" 
                                 Margin="0,0,10,0">
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <Image Source="/Assets/Icons/iconsPlus60.png" Width="12" Margin="0,0,5,0"/>
-                                <TextBlock Text="Thêm mới" FontSize="15"/>
-                            </StackPanel>
-                        </Button>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Image Source="/Assets/Icons/iconsPlus60.png" Width="12" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Thêm mới" FontSize="15"/>
+                                </StackPanel>
+                            </Button>
+
+                            <!--<Popup x:Name="ThemMoiPopup" 
+                                   PlacementTarget="{Binding ElementName=CaiDatButton}"
+                                   Placement="Custom"
+                                   CustomPopupPlacementCallback="PlacePopupRightAligned"
+                                   StaysOpen="True"
+                                   AllowsTransparency="True">
+                                <Border Style="{StaticResource SubMenuPopupStyle}" 
+                                        MinWidth="200" Margin="0,5,0,0">
+                                    <StackPanel>
+                                        <Button Content="Thêm hàng hóa" 
+                                                Style="{StaticResource SubMenuItemStyle}"
+                                                Click="SubMenuItem_Click"/>
+                                        <Button Content="Thêm hàng chế biến" 
+                                                Style="{StaticResource SubMenuItemStyle}"
+                                                Click="SubMenuItem_Click"/>
+                                        <Button Content="Thêm dịch vụ" 
+                                                Style="{StaticResource SubMenuItemStyle}"
+                                                Click="SubMenuItem_Click"/>
+                                        <Button Content="Thêm Combo, Buffet gọi món" 
+                                                Style="{StaticResource SubMenuItemStyle}"
+                                                Click="SubMenuItem_Click"/>
+                                    </StackPanel>
+                                </Border>
+                            </Popup>-->
+                        </Grid>
 
                         <Button Style="{StaticResource GreenButtonStyle}" 
                                 Margin="0,0,10,0">

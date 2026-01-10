@@ -5,6 +5,7 @@ using System.Windows.Threading;
 using System.Windows.Controls.Primitives;
 using RestMan3.Views;
 using RestMan3.Views.Goods;
+using RestMan3.Helpers;
 
 namespace RestMan3;
 
@@ -22,16 +23,15 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         // 1. Quản lý tập trung các Popup để tránh lặp code
-        _allPopups = new List<Popup>
-        {
-            HangHoaPopup, PhongBanPopup, GiaoDichPopup, DoiTacPopup,
-            NhanVienPopup, BanOnlinePopup, BaoCaoPopup, ThueKeToanPopup,
-            ThongTinPopup, CaiDatPopup
-        };
+        PopupManager.Instance.RegisterPopups(
+                HangHoaPopup, PhongBanPopup, GiaoDichPopup, DoiTacPopup,
+                NhanVienPopup, BanOnlinePopup, BaoCaoPopup, ThueKeToanPopup,
+                ThongTinPopup, CaiDatPopup
+        );
 
         // 2. Khởi tạo Timer để xử lý đóng Popup mượt mà
-        closeTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
-        closeTimer.Tick += CloseTimer_Tick;
+        //closeTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
+        //closeTimer.Tick += CloseTimer_Tick;
 
         // 3. Đăng ký các sự kiện hệ thống
         MainScrollViewer.ScrollChanged += MainScrollViewer_ScrollChanged;
@@ -67,7 +67,7 @@ public partial class MainWindow : Window
         if (sender is Button button && button.Content != null)
         {
             string content = button.Content.ToString()!;
-            CloseAllPopups();
+            PopupManager.Instance.CloseAll();
 
             switch (content)
             {
@@ -90,7 +90,7 @@ public partial class MainWindow : Window
         if (sender is Button button && button.Content != null)
         {
             string menuItem = button.Content.ToString()!;
-            CloseAllPopups();
+            PopupManager.Instance.CloseAll();
 
             // Xử lý chuyển trang dựa vào tên menu
             switch (menuItem)
@@ -261,85 +261,33 @@ public partial class MainWindow : Window
 
     #region Popup Management
 
-    private void CloseAllPopups()
-    {
-        _allPopups.ForEach(p => p.IsOpen = false);
-    }
-
-    private bool IsAnyPopupOpen() => _allPopups.Any(p => p.IsOpen);
-
     private void MenuContainer_MouseEnter(object sender, MouseEventArgs e)
     {
-        closeTimer.Stop();
+        PopupManager.Instance.StopCloseTimer();
+
         if (sender is Grid menuGrid)
         {
-            CloseAllPopups();
-
-            // Tự động tìm Popup tương ứng dựa trên tên Grid (Ví dụ: HangHoaMenu -> HangHoaPopup)
             string targetName = menuGrid.Name.Replace("Menu", "Popup");
-            var targetPopup = _allPopups.FirstOrDefault(p => p.Name == targetName);
-
-            if (targetPopup != null) targetPopup.IsOpen = true;
+            var targetPopup = FindName(targetName) as Popup;
+            PopupManager.Instance.OpenPopup(targetPopup);
         }
     }
 
     private void MenuContainer_MouseLeave(object sender, MouseEventArgs e)
     {
-        if (IsAnyPopupOpen()) closeTimer.Start();
+        if (PopupManager.Instance.IsAnyOpen())
+        {
+            PopupManager.Instance.StartCloseTimer();
+        }
     }
 
     private void Window_PreviewMouseDown(object sender, MouseButtonEventArgs e)
     {
-        if (IsAnyPopupOpen() && !IsMouseOverAnyMenu(e.GetPosition(this)))
+        if (PopupManager.Instance.IsAnyOpen() &&
+            !PopupManager.Instance.IsMouseOverAnyPopup())
         {
-            CloseAllPopups();
+            PopupManager.Instance.CloseAll();
         }
-    }
-
-    private bool IsMouseOverAnyMenu(Point mousePosition)
-    {
-        // Kiểm tra chuột trên các vùng Grid Menu
-        var menuGrids = new[] { HangHoaMenu, PhongBanMenu, GiaoDichMenu, DoiTacMenu, NhanVienMenu,
-                                BanOnlineMenu, BaoCaoMenu, ThueKeToanMenu, ThongTinMenu, CaiDatMenu };
-
-        bool overMenu = menuGrids.Any(m => IsMouseOverElement(m, mousePosition));
-        bool overPopup = _allPopups.Any(IsMouseOverPopup);
-
-        return overMenu || overPopup;
-    }
-
-    private bool IsMouseOverPopup(Popup popup)
-    {
-        if (popup?.IsOpen != true || popup.Child is not FrameworkElement element) return false;
-
-        try
-        {
-            Point mousePos = Mouse.GetPosition(element);
-            return mousePos.X >= 0 && mousePos.X <= element.ActualWidth &&
-                   mousePos.Y >= -10 && mousePos.Y <= element.ActualHeight;
-        }
-        catch { return false; }
-    }
-
-    private bool IsMouseOverElement(UIElement element, Point mousePosition)
-    {
-        if (element == null || !element.IsVisible) return false;
-        try
-        {
-            Point pos = element.PointFromScreen(PointToScreen(mousePosition));
-            var fe = (FrameworkElement)element;
-            return pos.X >= 0 && pos.X <= fe.ActualWidth && pos.Y >= 0 && pos.Y <= fe.ActualHeight;
-        }
-        catch { return false; }
-    }
-
-    private void CloseTimer_Tick(object? sender, EventArgs e)
-    {
-        if (!IsMouseOverAnyMenu(Mouse.GetPosition(this)))
-        {
-            CloseAllPopups();
-        }
-        closeTimer.Stop();
     }
 
     #endregion
@@ -371,7 +319,8 @@ public partial class MainWindow : Window
 
     private void MainArea_PreviewMouseMove(object sender, MouseEventArgs e)
     {
-        if (IsAnyPopupOpen()) closeTimer.Start();
+        if (PopupManager.Instance.IsAnyOpen()) PopupManager.Instance.StartCloseTimer();
+        //if (PopupManager.Instance.IsAnyOpen()) closeTimer.Start();
     }
 
     private void SupportButton_Click(object sender, RoutedEventArgs e)
