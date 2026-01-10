@@ -40,7 +40,7 @@
         <!-- Left Sidebar - Filters -->
         <Border Grid.Column="0" Background="Transparent" 
                 BorderThickness="0,0,1,0"
-                Margin="20">
+                Margin="20,20,0,20">
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <StackPanel>
                     <!-- Search Box -->
@@ -54,7 +54,7 @@
                                     Margin="0,0,0,10">
                                 <Grid>
                                     <TextBox x:Name="SearchTextBox"
-                                             Text="Theo mã, tên hàng"
+                                             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                                              Foreground="{StaticResource GrayText}"
                                              FontSize="14"
                                              BorderThickness="0"
@@ -73,7 +73,7 @@
                                 <TextBlock Text="Loại thực đơn" FontSize="14" FontWeight="Bold" Style="{StaticResource FilterHeaderStyle}" Margin="0"/>
                                 <Image Source="/Assets/Icons/iconsChevronUp48.png" Width="15" Height="15" HorizontalAlignment="Right"/>
                             </Grid>
-                            <CheckBox Content="Đồ ăn" IsChecked="True" Style="{StaticResource FormCheckBoxStyle}" />
+                            <CheckBox Content="Đồ ăn" Style="{StaticResource FormCheckBoxStyle}" />
                             <CheckBox Content="Đồ uống" Style="{StaticResource FormCheckBoxStyle}"/>
                             <CheckBox Content="Khác" Style="{StaticResource FormCheckBoxStyle}"/>
                         </StackPanel>
@@ -312,39 +312,84 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <DataGrid Grid.Row="0" x:Name="ProductsDataGrid" Style="{StaticResource ModernDataGrid}" ItemsSource="{Binding Products}">
+                    <DataGrid Grid.Row="0" 
+                              x:Name="ProductsDataGrid" 
+                              Style="{StaticResource ModernDataGrid}" 
+                              ItemsSource="{Binding Products}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
+                            <!-- Checkbox Column -->
                             <DataGridTemplateColumn Width="50">
                                 <DataGridTemplateColumn.Header>
                                     <CheckBox Style="{StaticResource ModernCheckBox}" 
-                                              HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              Margin="0,0,0,0"/>
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"/>
                                 </DataGridTemplateColumn.Header>
-
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <CheckBox Style="{StaticResource ModernCheckBox}"
-                                                  HorizontalAlignment="Center" 
-                                                  VerticalAlignment="Center"/>
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTextColumn Header="Mã hàng hóa" Binding="{Binding Code}" Width="120"/>
+                            <!-- Mã hàng hóa -->
+                            <DataGridTextColumn Header="Mã hàng hóa" 
+                            Binding="{Binding Code}" 
+                            Width="120"/>
 
-                            <DataGridTextColumn Header="Tên hàng" Binding="{Binding Name}" Width="150"/>
+                            <!-- Tên hàng -->
+                            <DataGridTextColumn Header="Tên hàng" 
+                            Binding="{Binding Name}" 
+                            Width="200"/>
 
-                            <DataGridTextColumn Header="Loại thực đơn" Binding="{Binding MenuType}" Width="150"/>
+                            <!-- Loại thực đơn -->
+                            <DataGridTextColumn Header="Loại thực đơn" 
+                            Binding="{Binding MenuType}" 
+                            Width="150"/>
 
-                            <DataGridTextColumn Header="Giá bán" Binding="{Binding Price, StringFormat=N0}" Width="120"/>
+                            <!-- Giá bán -->
+                            <DataGridTextColumn Header="Giá bán" 
+                            Binding="{Binding PriceDisplay}" 
+                            Width="120">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="Padding" Value="0,0,10,0"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Giá vốn" Binding="{Binding Cost, StringFormat=N0}" Width="120"/>
+                            <!-- Giá vốn -->
+                            <DataGridTextColumn Header="Giá vốn" 
+                            Binding="{Binding CostDisplay}" 
+                            Width="120">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="Padding" Value="0,0,10,0"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Tồn kho" Binding="{Binding Stock, StringFormat=N0}" Width="120"/>
+                            <!-- Tồn kho -->
+                            <DataGridTextColumn Header="Tồn kho" 
+                            Binding="{Binding StockDisplay}" 
+                            Width="120">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="Padding" Value="0,0,10,0"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Đặt hàng" Binding="{Binding MenuType}" Width="120"/>
-
+                            <!-- Đơn vị -->
+                            <DataGridTextColumn Header="Đơn vị" 
+                            Binding="{Binding Unit}" 
+                            Width="100"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -358,25 +403,57 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <Button Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0">
+                    <!-- First Page -->
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            Command="{Binding FirstPageCommand}">
                         <Image Source="/Assets/Icons/iconsStarts60.png" Width="20" Height="20"/>
                     </Button>
-                    <Button Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0">
+
+                    <!-- Previous Page -->
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            Command="{Binding PreviousPageCommand}">
                         <Image Source="/Assets/Icons/iconsTriangleArrowLeft48.png" Width="14" Height="14"/>
                     </Button>
-                    <Button Content="1" FontWeight="Bold" FontSize="15" Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0"/>
-                    <Button Content="2" FontWeight="Bold" FontSize="15" Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0"/>
-                    <Button Content="3" FontWeight="Bold" FontSize="15" Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0"/>
-                    <Button Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0">
+
+                    <!-- Page Number Display -->
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            FontWeight="Bold"
+                            FontSize="15"
+                            Content="{Binding CurrentPage}">
+                    </Button>
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            FontWeight="Bold"
+                            FontSize="15"
+                            Content="...">
+                    </Button>
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            FontWeight="Bold"
+                            FontSize="15"
+                            Content="{Binding TotalPages}">
+                    </Button>
+
+                    <!-- Next Page -->
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            Command="{Binding NextPageCommand}">
                         <Image Source="/Assets/Icons/iconsTriangleArrowRight48.png" Width="14" Height="14"/>
                     </Button>
-                    <Button Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0">
+
+                    <!-- Last Page -->
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            Margin="0,0,5,0"
+                            Command="{Binding LastPageCommand}">
                         <Image Source="/Assets/Icons/iconsEnd60.png" Width="20" Height="20"/>
                     </Button>
                 </StackPanel>
 
                 <TextBlock Grid.Column="1" 
-                           Text="Hiển thị 1 - 10 trên tổng số 25 hàng hóa"
+                           Text="{Binding PaginationText}"
                            FontSize="14"
                            Foreground="{StaticResource GrayText}"
                            VerticalAlignment="Center"

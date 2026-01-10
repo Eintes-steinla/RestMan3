@@ -215,16 +215,15 @@
 
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
-    <Folder Include="Commands\" />
     <Folder Include="Helpers\" />
     <Folder Include="Converters\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Resources\Themes\" />
     <Folder Include="Resources\Templates\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.3.0" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 

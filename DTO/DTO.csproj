@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="DTOs\" />
     <Folder Include="Enums\" />
   </ItemGroup>
 

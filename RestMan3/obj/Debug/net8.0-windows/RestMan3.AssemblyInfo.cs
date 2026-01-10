@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestMan3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b29a8affa9617c5b13f8d3a82b6e6b3e73a07eae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6665f274699d42a1208d068f17d37504a746af8c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestMan3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestMan3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
