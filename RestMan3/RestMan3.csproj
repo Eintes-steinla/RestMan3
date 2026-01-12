@@ -50,6 +50,7 @@
     <None Remove="Assets\Icons\iconsEnd60.png" />
     <None Remove="Assets\Icons\iconsFile48.png" />
     <None Remove="Assets\Icons\iconsImport52.png" />
+    <None Remove="Assets\Icons\iconsInfo48.png" />
     <None Remove="Assets\Icons\iconsLock48.png" />
     <None Remove="Assets\Icons\iconsLogout52.png" />
     <None Remove="Assets\Icons\iconsMenu50.png" />
@@ -126,6 +127,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsImport52.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsInfo48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsLock48.png">

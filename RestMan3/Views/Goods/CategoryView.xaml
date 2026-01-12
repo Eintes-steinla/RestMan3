@@ -314,7 +314,8 @@
                                 Foreground="{StaticResource PrimaryBlue}"
                                 FontSize="14"
                                 Cursor="Hand"
-                                Margin="0,0,15,0">
+                                Margin="0,0,15,0"
+                                Style="{StaticResource TransparentButtonStyle}">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Assets/Icons/iconsQuestionMark64.png" Width="12" Height="12" Margin="0,0,5,0"/>
                                 <TextBlock Text="Câu hỏi thường gặp"/>
@@ -325,7 +326,8 @@
                                 BorderThickness="0"
                                 Foreground="{StaticResource PrimaryBlue}"
                                 FontSize="14"
-                                Cursor="Hand">
+                                Cursor="Hand"
+                                Style="{StaticResource TransparentButtonStyle}">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Assets/Icons/iconsNotebook40.png" Width="12" Height="12" Margin="0,0,5,0"/>
                                 <TextBlock Text="Hướng dẫn sử dụng"/>

@@ -71,7 +71,7 @@ namespace RestMan3.Views.Goods
                 string command = btn.Content.ToString();
                 switch (command)
                 {
-                    case "Thêm":
+                    case "Thêm hàng hóa":
                         // Mở cửa sổ/box Thêm hàng hóa tại đây
                         MoBoxThemHangHoa();
                         break;
@@ -82,18 +82,28 @@ namespace RestMan3.Views.Goods
 
         private void MoBoxThemHangHoa()
         {
-            //// Tạo instance của cửa sổ nhập liệu
-            //var addWindow = new AddGoodsWindow();
+            // Tạo instance của cửa sổ nhập liệu
+            var addWindow = new AddGoodsWindow();
 
-            //// Hiển thị dạng Dialog (người dùng phải xong việc mới quay lại được màn hình chính)
-            //bool? result = addWindow.ShowDialog();
+            // Hiển thị dạng Dialog (người dùng phải xong việc mới quay lại được màn hình chính)
+            bool? result = addWindow.ShowDialog();
 
-            //if (result == true)
-            //{
-            //    // Refresh lại danh sách hàng hóa sau khi thêm thành công
-            //    _viewModel.LoadData();
-            //}
+            if (result == true)
+            {
+                // Refresh lại danh sách hàng hóa sau khi thêm thành công
+                _viewModel.LoadData();
+                MessageBox.Show("Đã thêm hàng hóa thành công!", "Thông báo",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
+
+        // Hoặc nếu muốn mở form dạng non-modal (không chặn window chính):
+        //private void MoBoxThemHangHoaNonModal()
+        //{
+        //    var addWindow = new AddGoodsWindow();
+        //    addWindow.Owner = Window.GetWindow(this); // Set owner để window con luôn ở trên window cha
+        //    addWindow.Show();
+        //}
 
         #endregion
 

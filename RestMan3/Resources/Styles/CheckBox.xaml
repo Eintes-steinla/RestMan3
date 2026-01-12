@@ -64,4 +64,85 @@
         <Setter Property="Margin" Value="0,0,0,5"/>
         <Setter Property="Padding" Value="10,0,0,0"/>
     </Style>
+
+    <!-- ModernToggleSwitch -->
+
+    <Style x:Key="ModernToggleSwitch" TargetType="ToggleButton">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Background" Value="#CCCCCC"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <!-- Background track -->
+                        <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="13"
+                            Width="50"
+                            Height="26"/>
+
+                        <!-- Sliding circle -->
+                        <Canvas>
+                            <Ellipse x:Name="Circle"
+                                 Width="22"
+                                 Height="22"
+                                 Fill="White"
+                                 Canvas.Left="2"
+                                 Canvas.Top="2">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect BlurRadius="4" 
+                                                  ShadowDepth="1" 
+                                                  Opacity="0.3"
+                                                  Color="Black"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                        </Canvas>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!-- When checked (ON) -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#0066FF"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Circle"
+                                                     Storyboard.TargetProperty="(Canvas.Left)"
+                                                     To="26"
+                                                     Duration="0:0:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Circle"
+                                                     Storyboard.TargetProperty="(Canvas.Left)"
+                                                     To="2"
+                                                     Duration="0:0:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <!-- Hover effect -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
