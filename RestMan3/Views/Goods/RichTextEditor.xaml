@@ -1,0 +1,186 @@
+<UserControl x:Class="RestMan3.Views.Goods.RichTextEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <!-- Toolbar Button Style -->
+        <Style x:Key="ToolbarButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="36"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <!-- Format Dropdown Style -->
+        <Style x:Key="FormatDropdownStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="8,8"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Ribbon Toolbar -->
+        <Border Grid.Row="0" Background="White" BorderBrush="#EEEEEE" BorderThickness="0,0,0,1" Padding="10,8">
+            <StackPanel Orientation="Vertical">
+                <!-- Format Row -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <TextBlock Text="Dinh dang:" VerticalAlignment="Center" FontSize="12" Foreground="#666666" Margin="0,0,5,0"/>
+                    <ComboBox x:Name="FormatComboBox" 
+                              Style="{StaticResource FormatDropdownStyle}"
+                              Width="120"
+                              SelectedIndex="0">
+                        <ComboBoxItem Content="Paragraph"/>
+                        <ComboBoxItem Content="Heading 1"/>
+                        <ComboBoxItem Content="Heading 2"/>
+                        <ComboBoxItem Content="Heading 3"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- Formatting Buttons Row -->
+                <StackPanel Orientation="Horizontal">
+                    <!-- Bold Button -->
+                    <Button x:Name="BoldButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="BoldButton_Click"
+                            ToolTip="Bold (Ctrl+B)"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="B" FontWeight="Bold" FontSize="16" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Italic Button -->
+                    <Button x:Name="ItalicButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="ItalicButton_Click"
+                            ToolTip="Italic (Ctrl+I)"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="I" FontStyle="Italic" FontSize="16" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Underline Button -->
+                    <Button x:Name="UnderlineButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="UnderlineButton_Click"
+                            ToolTip="Underline (Ctrl+U)"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="U" TextDecorations="Underline" FontSize="16" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Separator -->
+                    <Separator Width="1" Background="#DDDDDD" Margin="4"/>
+
+                    <!-- Left Align Button -->
+                    <Button x:Name="AlignLeftButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="AlignLeftButton_Click"
+                            ToolTip="Align Left"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="[" FontSize="14" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Center Align Button -->
+                    <Button x:Name="AlignCenterButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="AlignCenterButton_Click"
+                            ToolTip="Align Center"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="|" FontSize="14" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Right Align Button -->
+                    <Button x:Name="AlignRightButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="AlignRightButton_Click"
+                            ToolTip="Align Right"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="]" FontSize="14" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Justify Button -->
+                    <Button x:Name="JustifyButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="JustifyButton_Click"
+                            ToolTip="Justify"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="=" FontSize="14" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Separator -->
+                    <Separator Width="1" Background="#DDDDDD" Margin="4"/>
+
+                    <!-- Bullet List Button -->
+                    <Button x:Name="BulletListButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="BulletListButton_Click"
+                            ToolTip="Bullet List"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="*" FontSize="14" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Numbered List Button -->
+                    <Button x:Name="NumberedListButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="NumberedListButton_Click"
+                            ToolTip="Numbered List"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="1" FontSize="14" Foreground="#333333"/>
+                    </Button>
+
+                    <!-- Separator -->
+                    <Separator Width="1" Background="#DDDDDD" Margin="4"/>
+
+                    <!-- Link Button -->
+                    <Button x:Name="LinkButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="LinkButton_Click"
+                            ToolTip="Insert Link"
+                            Margin="0,0,4,0">
+                        <TextBlock Text="@" FontSize="14"/>
+                    </Button>
+
+                    <!-- Image Button -->
+                    <Button x:Name="ImageButton" 
+                            Style="{StaticResource ToolbarButtonStyle}"
+                            Click="ImageButton_Click"
+                            ToolTip="Insert Image">
+                        <TextBlock Text="#" FontSize="14"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- RichTextBox Content Area -->
+        <Border Grid.Row="1" Background="White" BorderBrush="#DDDDDD" BorderThickness="1" Margin="10,0,10,10">
+            <RichTextBox x:Name="RichTextContentBox" 
+                         Background="White"
+                         Foreground="#333333"
+                         Padding="12,10"
+                         FontSize="14"
+                         FontFamily="Segoe UI"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"
+                         SpellCheck.IsEnabled="False"
+                         AllowDrop="True">
+                <RichTextBox.Document>
+                    <FlowDocument PagePadding="0">
+                        <Paragraph/>
+                    </FlowDocument>
+                </RichTextBox.Document>
+            </RichTextBox>
+        </Border>
+    </Grid>
+</UserControl>

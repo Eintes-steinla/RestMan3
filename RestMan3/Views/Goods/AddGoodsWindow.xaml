@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestMan3.Views.Goods"
         mc:Ignorable="d"
         Title="Thêm hàng hóa" 
         Height="600"
-        d:DesignHeight="1200"
+        d:DesignHeight="900"
         Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -199,9 +200,15 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBox x:Name="ViTriTextBox" 
+                                <ComboBox x:Name="ViTriComboBox" 
                                          Grid.Column="0"
-                                         Style="{StaticResource InputTextBoxStyle}"/>
+                                         Style="{StaticResource InputComboBoxStyle}">
+                                    <ComboBoxItem Content="Tủ lạnh"/>
+                                    <ComboBoxItem Content="Tủ bếp"/>
+                                    <ComboBoxItem Content="Tủ trữ đông"/>
+                                    <ComboBoxItem Content="Kho"/>
+                                    <ComboBoxItem Content="Quầy bán hàng"/>
+                                </ComboBox>
                                 <Button Grid.Column="1" 
                                         Style="{StaticResource GreenButtonStyle}"
                                         Margin="10,0,0,0">
@@ -352,7 +359,9 @@
                                 <ComboBox x:Name="NhomHangComboBox" 
                                           Grid.Column="0"
                                           Style="{StaticResource InputComboBoxStyle}">
-                                    <ComboBoxItem Content="--Lựa chọn--" IsSelected="True"/>
+                                    <ComboBoxItem Content="SÚP"/>
+                                    <ComboBoxItem Content="TEA"/>
+                                    <ComboBoxItem Content="MÓN KHAI VỊ"/>
                                 </ComboBox>
                                 <Button Grid.Column="1" 
                                         Style="{StaticResource GreenButtonStyle}"
@@ -464,13 +473,8 @@
                     <TextBlock Text="Mô tả chi tiết" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>
                     <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
                         <StackPanel>
-                            <TextBlock Text="Mô tả" Style="{StaticResource InputLabelStyle}"/>
-                            <TextBox x:Name="MoTaTextBox" 
-                                     Height="200" 
-                                     TextWrapping="Wrap"
-                                     AcceptsReturn="True"
-                                     VerticalScrollBarVisibility="Auto"
-                                     Style="{StaticResource InputTextBoxStyle}"/>
+                            <TextBlock Text="Mô tả" Style="{StaticResource InputLabelStyle}" Margin="0,0,0,15"/>
+                            <local:RichTextEditor x:Name="RichTextEditorControl" Height="300"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>

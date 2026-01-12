@@ -83,10 +83,9 @@ namespace RestMan3.Views.Goods
             var maHangHoa = MaHangHoaTextBox.Text;
             var tenHang = TenHangTextBox.Text;
             var loaiThucDon = (LoaiThucDonComboBox.SelectedItem as System.Windows.Controls.ComboBoxItem)?.Content.ToString();
-            var viTri = ViTriTextBox.Text;
+            var viTri = (ViTriComboBox.SelectedItem as System.Windows.Controls.ComboBoxItem)?.Content.ToString();
             var trongLuong = TrongLuongTextBox.Text;
             var donViTinh = DonViTinhTextBox.Text;
-            var moTa = MoTaTextBox.Text;
 
             decimal.TryParse(GiaVonTextBox.Text.Replace(",", ""), out decimal giaVon);
             decimal.TryParse(GiaBanTextBox.Text.Replace(",", ""), out decimal giaBan);
@@ -99,6 +98,9 @@ namespace RestMan3.Views.Goods
             var laMonThem = LaMonThemCheckBox.IsChecked ?? false;
             var quanLyTonKho = QuanLyTonKhoToggle.IsChecked ?? false;
 
+            // Lấy nội dung mô tả từ RichTextEditor
+            var moTa = RichTextEditorControl.GetContent();
+
             // Gọi service để lưu dữ liệu vào database
             // await _menuItemService.CreateAsync(newItem);
         }
@@ -109,11 +111,10 @@ namespace RestMan3.Views.Goods
             MaHangHoaTextBox.Text = "Mã hàng tự động";
             TenHangTextBox.Clear();
             LoaiThucDonComboBox.SelectedIndex = 0;
-            ViTriTextBox.Clear();
+            ViTriComboBox.SelectedIndex = -1;
             TrongLuongTextBox.Clear();
             NhomHangComboBox.SelectedIndex = 0;
             DonViTinhTextBox.Clear();
-            MoTaTextBox.Clear();
 
             GiaVonTextBox.Text = "0";
             GiaBanTextBox.Text = "0";
@@ -125,6 +126,9 @@ namespace RestMan3.Views.Goods
             BanTrucTiepCheckBox.IsChecked = true;
             LaMonThemCheckBox.IsChecked = false;
             QuanLyTonKhoToggle.IsChecked = true;
+
+            // Reset RichTextEditor content
+            RichTextEditorControl.SetContent("");
 
             // Reset về tab Thông tin
             SelectTab("ThongTin");
