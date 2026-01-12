@@ -85,6 +85,7 @@ namespace RestMan3.Views.Goods
             var loaiThucDon = (LoaiThucDonComboBox.SelectedItem as System.Windows.Controls.ComboBoxItem)?.Content.ToString();
             var viTri = ViTriTextBox.Text;
             var trongLuong = TrongLuongTextBox.Text;
+            var donViTinh = DonViTinhTextBox.Text;
             var moTa = MoTaTextBox.Text;
 
             decimal.TryParse(GiaVonTextBox.Text.Replace(",", ""), out decimal giaVon);
@@ -111,6 +112,7 @@ namespace RestMan3.Views.Goods
             ViTriTextBox.Clear();
             TrongLuongTextBox.Clear();
             NhomHangComboBox.SelectedIndex = 0;
+            DonViTinhTextBox.Clear();
             MoTaTextBox.Clear();
 
             GiaVonTextBox.Text = "0";

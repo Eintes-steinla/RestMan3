@@ -37,6 +37,7 @@
   <ItemGroup>
     <None Remove="Assets\Icons\iconsAnalytics60.png" />
     <None Remove="Assets\Icons\iconsBack64.png" />
+    <None Remove="Assets\Icons\iconsBan64.png" />
     <None Remove="Assets\Icons\iconsBill48.png" />
     <None Remove="Assets\Icons\iconsCart60.png" />
     <None Remove="Assets\Icons\iconsChatBubble48.png" />
@@ -64,6 +65,7 @@
     <None Remove="Assets\Icons\iconsQuestionMark64.png" />
     <None Remove="Assets\Icons\iconsQuestionMarkBlack48.png" />
     <None Remove="Assets\Icons\iconsRight30.png" />
+    <None Remove="Assets\Icons\iconsSave48.png" />
     <None Remove="Assets\Icons\iconsSearch48.png" />
     <None Remove="Assets\Icons\iconsServiceBell.png" />
     <None Remove="Assets\Icons\iconsSettings64.png" />
@@ -88,6 +90,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsBack64.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsBan64.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsBill48.png">
@@ -166,6 +171,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsRight30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsSave48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsSearch48.png">

@@ -20,6 +20,9 @@
     <Compile Update="Resources\Styles\RadioButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Resources\Styles\ScrollViewer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DashBoardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

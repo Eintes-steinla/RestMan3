@@ -150,7 +150,8 @@
         </Border>
 
         <!-- Content Area -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0"
+                      Style="{StaticResource OverlayScrollViewer}">
             <Grid>
                 <!-- Thông tin Tab Content -->
                 <Grid x:Name="ThongTinContent" Margin="20,20">
@@ -236,7 +237,7 @@
                                         BorderThickness="2" 
                                         Width="130" Height="130" 
                                         Background="#FAFAFA"
-                                        Margin="0,0,10,0"
+                                        Margin="0,0,5,0"
                                         Cursor="Hand">
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Image Source="/Assets/Icons/iconsPlusBlack60.png" Width="30" Height="30" Opacity="0.3"/>
@@ -246,7 +247,7 @@
                                         BorderThickness="2" 
                                         Width="130" Height="130" 
                                         Background="#FAFAFA"
-                                        Margin="0,0,10,0"
+                                        Margin="5,0,5,0"
                                         Cursor="Hand">
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Image Source="/Assets/Icons/iconsPlusBlack60.png" Width="30" Height="30" Opacity="0.3"/>
@@ -256,7 +257,7 @@
                                         BorderThickness="2" 
                                         Width="130" Height="130" 
                                         Background="#FAFAFA"
-                                        Margin="0,0,10,0"
+                                        Margin="5,0,5,0"
                                         Cursor="Hand">
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Image Source="/Assets/Icons/iconsPlusBlack60.png" Width="30" Height="30" Opacity="0.3"/>
@@ -266,7 +267,7 @@
                                         BorderThickness="2" 
                                         Width="130" Height="130" 
                                         Background="#FAFAFA"
-                                        Margin="0,0,10,0"
+                                        Margin="5,0,0,0"
                                         Cursor="Hand">
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Image Source="/Assets/Icons/iconsPlusBlack60.png" Width="30" Height="30" Opacity="0.3"/>
@@ -323,63 +324,6 @@
                             </StackPanel>
                         </Border>
 
-                        <!-- Quản lý tồn kho Section -->
-                        <Border Background="White" 
-                                BorderBrush="#EEEEEE" 
-                                BorderThickness="1" 
-                                Padding="20">
-                            <StackPanel>
-                                <Grid Margin="0,0,0,15">
-                                    <TextBlock Text="Quản lý tồn kho" Style="{StaticResource SectionHeaderStyle}" Margin="0"/>
-                                    <ToggleButton x:Name="QuanLyTonKhoToggle" 
-                                                  HorizontalAlignment="Right"
-                                                  Width="50" Height="26"
-                                                  IsChecked="True"
-                                                  Style="{StaticResource ModernToggleSwitch}"/>
-                                </Grid>
-
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                            <TextBlock Text="Tồn kho" Style="{StaticResource InputLabelStyle}"/>
-                                            <Image Style="{StaticResource InfoIconStyle}" ToolTip="Số lượng tồn kho của sản phẩm (Sẽ tạo tự động tạo ra phiếu kiểm kho cho sản phẩm, nếu không nhập hệ thống coi Tồn kho = 0 sản phẩm"/>
-                                        </StackPanel>
-                                        <TextBox x:Name="TonKhoTextBox" 
-                                                 Style="{StaticResource InputTextBoxStyle}" 
-                                                 Text="0"
-                                                 TextAlignment="Right"/>
-                                    </StackPanel>
-
-                                    <StackPanel Grid.Column="1" Margin="0,0,10,0">
-                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                            <TextBlock Text="Ít nhất" Style="{StaticResource InputLabelStyle}"/>
-                                            <Image Style="{StaticResource InfoIconStyle}" ToolTip="Tồn ít nhất là tồn tối thiểu của một sản phẩm (Hệ thống sẽ dựa vào thông tin này để cảnh báo tồn kho tối thiểu)"/>
-                                        </StackPanel>
-                                        <TextBox x:Name="ItNhatTextBox" 
-                                                 Style="{StaticResource InputTextBoxStyle}" 
-                                                 Text="0"
-                                                 TextAlignment="Right"/>
-                                    </StackPanel>
-
-                                    <StackPanel Grid.Column="2">
-                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                            <TextBlock Text="Nhiều nhất" Style="{StaticResource InputLabelStyle}"/>
-                                            <Image Style="{StaticResource InfoIconStyle}" ToolTip="Tồn ít nhất là tồn tối đa của một sản phẩm (Hệ thống sẽ dựa vào thông tin này để cảnh báo khi hàng hóa vượt quá mức tồn cho phép)"/>
-                                        </StackPanel>
-                                        <TextBox x:Name="NhieuNhatTextBox" 
-                                                 Style="{StaticResource InputTextBoxStyle}" 
-                                                 Text="999,999,999"
-                                                 TextAlignment="Right"/>
-                                    </StackPanel>
-                                </Grid>
-                            </StackPanel>
-                        </Border>
                     </StackPanel>
 
                     <!-- Right Column -->
@@ -429,7 +373,7 @@
                         </StackPanel>
 
                         <!-- Thuộc tính Section -->
-                        <Border Background="#F8F8F8" 
+                        <!--<Border Background="#F8F8F8" 
                                 BorderBrush="#EEEEEE" 
                                 BorderThickness="1" 
                                 Padding="20" 
@@ -442,20 +386,74 @@
                                            Foreground="#999999"
                                            FontStyle="Italic"/>
                             </StackPanel>
-                        </Border>
+                        </Border>-->
 
                         <!-- Đơn vị tính Section -->
-                        <Border Background="#F8F8F8" 
-                                BorderBrush="#EEEEEE" 
-                                BorderThickness="1" 
-                                Padding="20">
+                        <StackPanel Margin="0,0,0,20">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <TextBlock Text="Đơn vị tính" Style="{StaticResource InputLabelStyle}"/>
+                                <Image Style="{StaticResource InfoIconStyle}" ToolTip="Đơn vị của hàng hóa như: Hộp, Lốc, Thùng, ..."/>
+                            </StackPanel>
+                            <TextBox x:Name="DonViTinhTextBox" 
+                                     Style="{StaticResource InputTextBoxStyle}"
+                                     Text=""/>
+                        </StackPanel>
+
+                        <!-- Quản lý tồn kho Section -->
+                        <Border Background="White" 
+        BorderBrush="#EEEEEE" 
+        BorderThickness="1" 
+        Padding="20">
                             <StackPanel>
-                                <TextBlock Text="Đơn vị tính" 
-                                           Style="{StaticResource SectionHeaderStyle}"/>
-                                <TextBlock Text="Chưa có đơn vị tính nào" 
-                                           FontSize="13" 
-                                           Foreground="#999999"
-                                           FontStyle="Italic"/>
+                                <Grid Margin="0,0,0,15">
+                                    <TextBlock Text="Quản lý tồn kho" Style="{StaticResource SectionHeaderStyle}" Margin="0"/>
+                                    <ToggleButton x:Name="QuanLyTonKhoToggle" 
+                          HorizontalAlignment="Right"
+                          Width="50" Height="26"
+                          IsChecked="True"
+                          Style="{StaticResource ModernToggleSwitch}"/>
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <TextBlock Text="Tồn kho" Style="{StaticResource InputLabelStyle}"/>
+                                            <Image Style="{StaticResource InfoIconStyle}" ToolTip="Số lượng tồn kho của sản phẩm (Sẽ tạo tự động tạo ra phiếu kiểm kho cho sản phẩm, nếu không nhập hệ thống coi Tồn kho = 0 sản phẩm"/>
+                                        </StackPanel>
+                                        <TextBox x:Name="TonKhoTextBox" 
+                         Style="{StaticResource InputTextBoxStyle}" 
+                         Text="0"
+                         TextAlignment="Right"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <TextBlock Text="Ít nhất" Style="{StaticResource InputLabelStyle}"/>
+                                            <Image Style="{StaticResource InfoIconStyle}" ToolTip="Tồn ít nhất là tồn tối thiểu của một sản phẩm (Hệ thống sẽ dựa vào thông tin này để cảnh báo tồn kho tối thiểu)"/>
+                                        </StackPanel>
+                                        <TextBox x:Name="ItNhatTextBox" 
+                         Style="{StaticResource InputTextBoxStyle}" 
+                         Text="0"
+                         TextAlignment="Right"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="2">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <TextBlock Text="Nhiều nhất" Style="{StaticResource InputLabelStyle}"/>
+                                            <Image Style="{StaticResource InfoIconStyle}" ToolTip="Tồn ít nhất là tồn tối đa của một sản phẩm (Hệ thống sẽ dựa vào thông tin này để cảnh báo khi hàng hóa vượt quá mức tồn cho phép)"/>
+                                        </StackPanel>
+                                        <TextBox x:Name="NhieuNhatTextBox" 
+                         Style="{StaticResource InputTextBoxStyle}" 
+                         Text="999,999,999"
+                         TextAlignment="Right"/>
+                                    </StackPanel>
+                                </Grid>
                             </StackPanel>
                         </Border>
                     </StackPanel>
@@ -546,27 +544,16 @@
                 Background="White" 
                 BorderBrush="#EEEEEE" 
                 BorderThickness="0,1,0,0"
-                Padding="30,20">
+                Padding="20,20">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="LuuButton"
                         Style="{StaticResource GreenButtonStyle}" 
-                        Width="120" Height="45"
+                        Width="100" Height="45"
                         Margin="0,0,10,0"
                         Click="LuuButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Assets/Icons/iconsPlus60.png" Width="16" Height="16" Margin="0,0,8,0"/>
+                        <Image Source="/Assets/Icons/iconsSave48.png" Width="17" Height="17"  Margin="0,0,10,0"/>
                         <TextBlock Text="Lưu" FontSize="15" FontWeight="Medium"/>
-                    </StackPanel>
-                </Button>
-
-                <Button x:Name="LuuVaThemMoiButton"
-                        Style="{StaticResource GreenButtonStyle}" 
-                        Width="180" Height="45"
-                        Margin="0,0,10,0"
-                        Click="LuuVaThemMoiButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Assets/Icons/iconsPlus60.png" Width="16" Height="16" Margin="0,0,8,0"/>
-                        <TextBlock Text="Lưu &amp; Thêm mới" FontSize="15" FontWeight="Medium"/>
                     </StackPanel>
                 </Button>
 
@@ -574,7 +561,7 @@
                         Background="#6C757D" 
                         Foreground="White"
                         BorderThickness="0"
-                        Width="120" Height="45"
+                        Width="100" Height="45"
                         Cursor="Hand"
                         Click="BoQuaButton_Click">
                     <Button.Template>
@@ -597,8 +584,8 @@
                         </Style>
                     </Button.Style>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Assets/Icons/iconsLogout52.png" Width="16" Height="16" Margin="0,0,8,0"/>
-                        <TextBlock Text="Bỏ qua" FontSize="15" FontWeight="Medium"/>
+                        <Image Source="/Assets/Icons/iconsBan64.png" Width="15" Height="15" Margin="0,0,8,0"/>
+                        <TextBlock Text="Bỏ qua" FontSize="15" FontWeight="Medium" />
                     </StackPanel>
                 </Button>
             </StackPanel>
