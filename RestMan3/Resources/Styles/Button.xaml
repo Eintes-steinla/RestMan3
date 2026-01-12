@@ -4,6 +4,33 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Resources/Styles/Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+
+    <!-- Top Icon Button Style -->
+    <Style x:Key="TopIconButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource GrayText}"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                        CornerRadius="4"
+                        Padding="8">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F0F0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     
     <!-- Button Styles -->
     <Style x:Key="GreenButtonStyle" TargetType="Button">

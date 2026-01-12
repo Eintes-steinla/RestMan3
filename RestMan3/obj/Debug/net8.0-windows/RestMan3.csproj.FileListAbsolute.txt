@@ -104,3 +104,4 @@ E:\vstimPJ\RestMan3\RestMan3\bin\Debug\net8.0-windows\runtimes\rhel-x64\native\l
 E:\vstimPJ\RestMan3\RestMan3\bin\Debug\net8.0-windows\runtimes\win7-arm\native\libuv.dll
 E:\vstimPJ\RestMan3\RestMan3\bin\Debug\net8.0-windows\runtimes\win7-x64\native\libuv.dll
 E:\vstimPJ\RestMan3\RestMan3\bin\Debug\net8.0-windows\runtimes\win7-x86\native\libuv.dll
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

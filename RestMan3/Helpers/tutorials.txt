@@ -1,0 +1,4 @@
+﻿# khai báo sử dụng PopupManager với căn chỉnh bên phải trong XAML
+xmlns:helpers="clr-namespace:RestMan3.Helpers"
+
+helpers:PopupManager.UseRightAlignedPlacement="True"

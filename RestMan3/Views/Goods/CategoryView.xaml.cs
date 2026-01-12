@@ -1,8 +1,12 @@
-﻿using RestMan3.ViewModels;
+﻿using RestMan3.Helpers;
+using RestMan3.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace RestMan3.Views.Goods
 {
@@ -18,7 +22,80 @@ namespace RestMan3.Views.Goods
 
             // Bind RecordsPerPageComboBox
             RecordsPerPageComboBox.SelectionChanged += RecordsPerPageComboBox_SelectionChanged;
+
+            // 1. Quản lý tập trung các Popup để tránh lặp code
+            PopupManager.Instance.RegisterPopups(
+                    ThemMoiPopup
+            );
+            PopupManager.Instance.RegisterMenuGrids(ThemMoiMenu);
+
+            this.PreviewMouseDown += Window_PreviewMouseDown;
         }
+
+        #region Popup Management
+
+        private void MenuContainer_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PopupManager.Instance.StopCloseTimer();
+
+            if (sender is Grid menuGrid)
+            {
+                string targetName = menuGrid.Name.Replace("Menu", "Popup");
+                var targetPopup = FindName(targetName) as Popup;
+                PopupManager.Instance.OpenPopup(targetPopup);
+            }
+        }
+
+        private void MenuContainer_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (PopupManager.Instance.IsAnyOpen())
+            {
+                PopupManager.Instance.StartCloseTimer();
+            }
+        }
+
+        private void Window_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (PopupManager.Instance.IsAnyOpen() &&
+                !PopupManager.Instance.IsMouseOverAnyPopup())
+            {
+                PopupManager.Instance.CloseAll();
+            }
+        }
+
+        // Hàm này sẽ nhận sự kiện từ các nút bấm trong Popup
+        private void SubMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                string command = btn.Content.ToString();
+                switch (command)
+                {
+                    case "Thêm":
+                        // Mở cửa sổ/box Thêm hàng hóa tại đây
+                        MoBoxThemHangHoa();
+                        break;
+                }
+                PopupManager.Instance.CloseAll(); // Đóng popup sau khi chọn
+            }
+        }
+
+        private void MoBoxThemHangHoa()
+        {
+            //// Tạo instance của cửa sổ nhập liệu
+            //var addWindow = new AddGoodsWindow();
+
+            //// Hiển thị dạng Dialog (người dùng phải xong việc mới quay lại được màn hình chính)
+            //bool? result = addWindow.ShowDialog();
+
+            //if (result == true)
+            //{
+            //    // Refresh lại danh sách hàng hóa sau khi thêm thành công
+            //    _viewModel.LoadData();
+            //}
+        }
+
+        #endregion
 
         private void RecordsPerPageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RestMan3.Views.Goods"
+             xmlns:helpers="clr-namespace:RestMan3.Helpers"
              mc:Ignorable="d" 
              d:DesignHeight="1200" d:DesignWidth="1300">
     <UserControl.Resources>
@@ -244,19 +245,21 @@
 
                     <!-- Action Buttons Left -->
                     <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Grid>
-                            <Button Style="{StaticResource GreenButtonStyle}" 
-                                Margin="0,0,10,0">
+                        <Grid x:Name="ThemMoiMenu"
+                              MouseEnter="MenuContainer_MouseEnter"
+                              MouseLeave="MenuContainer_MouseLeave">
+                            <Button x:Name="ThemMoiButton" Style="{StaticResource GreenButtonStyle}" 
+                                    Margin="0,0,10,0">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <Image Source="/Assets/Icons/iconsPlus60.png" Width="12" Margin="0,0,5,0"/>
                                     <TextBlock Text="Thêm mới" FontSize="15"/>
                                 </StackPanel>
                             </Button>
 
-                            <!--<Popup x:Name="ThemMoiPopup" 
-                                   PlacementTarget="{Binding ElementName=CaiDatButton}"
+                            <Popup x:Name="ThemMoiPopup" 
+                                   PlacementTarget="{Binding ElementName=ThemMoiButton}"
                                    Placement="Custom"
-                                   CustomPopupPlacementCallback="PlacePopupRightAligned"
+                                   helpers:PopupManager.UseRightAlignedPlacement="True"
                                    StaysOpen="True"
                                    AllowsTransparency="True">
                                 <Border Style="{StaticResource SubMenuPopupStyle}" 
@@ -276,7 +279,7 @@
                                                 Click="SubMenuItem_Click"/>
                                     </StackPanel>
                                 </Border>
-                            </Popup>-->
+                            </Popup>
                         </Grid>
 
                         <Button Style="{StaticResource GreenButtonStyle}" 
