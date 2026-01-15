@@ -31,15 +31,6 @@
             <Setter Property="FontWeight" Value="Medium"/>
         </Style>
 
-        <!-- Info Icon Style -->
-        <Style x:Key="InfoIconStyle" TargetType="Image">
-            <Setter Property="Width" Value="16"/>
-            <Setter Property="Height" Value="16"/>
-            <Setter Property="Margin" Value="5,0,0,0"/>
-            <Setter Property="Cursor" Value="Help"/>
-            <Setter Property="Source" Value="/Assets/Icons/iconsInfo48.png"/>
-        </Style>
-
         <!-- Input TextBox Style -->
         <Style x:Key="InputTextBoxStyle" TargetType="TextBox">
             <Setter Property="Height" Value="40"/>
@@ -155,7 +146,7 @@
                       Style="{StaticResource OverlayScrollViewer}">
             <Grid>
                 <!-- Thông tin Tab Content -->
-                <Grid Visibility="Visible" x:Name="ThongTinContent" Margin="20,20">
+                <Grid Visibility="Collapsed" x:Name="ThongTinContent" Margin="20,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -480,46 +471,18 @@
 
                 <!-- Thành phần Tab Content -->
                 <StackPanel Visibility="Collapsed" x:Name="ThanhPhanContent" Margin="20,20">
-                    <TextBlock Text="Thành phần" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>
                     <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
                         <StackPanel>
-                            <TextBlock Text="Danh sách thành phần (Hàng hóa thành phần)" 
-                                       Style="{StaticResource InputLabelStyle}"/>
-                            <TextBlock Text="Chưa có thành phần nào" 
-                                       FontSize="13" 
-                                       Foreground="#999999"
-                                       FontStyle="Italic"
-                                       Margin="0,0,0,15"/>
-                            <Button Style="{StaticResource GreenButtonStyle}" 
-                                    Width="150" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Assets/Icons/iconsPlus60.png" Width="16" Height="16" Margin="0,0,8,0"/>
-                                    <TextBlock Text="Thêm thành phần" FontSize="14"/>
-                                </StackPanel>
-                            </Button>
+                            <local:ComponentsTab x:Name="ComponentsTabControl"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>
 
                 <!-- Món thêm Tab Content -->
-                <StackPanel x:Name="MonThemContent" Visibility="Collapsed" Margin="20,20">
-                    <TextBlock Text="Món thêm" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>
+                <StackPanel Visibility="Visible" x:Name="MonThemContent" Margin="20,20">
                     <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
                         <StackPanel>
-                            <TextBlock Text="Danh sách món thêm (Extra topping)" 
-                                       Style="{StaticResource InputLabelStyle}"/>
-                            <TextBlock Text="Chưa có món thêm nào" 
-                                       FontSize="13" 
-                                       Foreground="#999999"
-                                       FontStyle="Italic"
-                                       Margin="0,0,0,15"/>
-                            <Button Style="{StaticResource GreenButtonStyle}" 
-                                    Width="150" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Assets/Icons/iconsPlus60.png" Width="16" Height="16" Margin="0,0,8,0"/>
-                                    <TextBlock Text="Thêm món thêm" FontSize="14"/>
-                                </StackPanel>
-                            </Button>
+                            <local:SideDishTab x:Name="SideDishTabControl"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>

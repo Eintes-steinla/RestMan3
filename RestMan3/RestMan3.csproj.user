@@ -17,10 +17,16 @@
     <Compile Update="Resources\Styles\DataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Resources\Styles\Icons.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Resources\Styles\RadioButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\Styles\ScrollViewer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\Styles\TextBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\DashBoardView.xaml.cs">
@@ -30,6 +36,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Goods\CategoryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Goods\SideDishTab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\LoginView.xaml.cs">

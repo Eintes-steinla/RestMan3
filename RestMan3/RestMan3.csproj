@@ -72,6 +72,7 @@
     <None Remove="Assets\Icons\iconsProfile64.png" />
     <None Remove="Assets\Icons\iconsQuestionMark64.png" />
     <None Remove="Assets\Icons\iconsQuestionMarkBlack48.png" />
+    <None Remove="Assets\Icons\iconsRemove48.png" />
     <None Remove="Assets\Icons\iconsRight30.png" />
     <None Remove="Assets\Icons\iconsSave48.png" />
     <None Remove="Assets\Icons\iconsSearch48.png" />
@@ -200,6 +201,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsQuestionMark64.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsRemove48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsRight30.png">

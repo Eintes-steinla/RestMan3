@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="RestMan3.Views.Goods.SideDishTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="800">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Header -->
+            <StackPanel Grid.Column="0" Margin="20,10" Orientation="Horizontal"
+                    VerticalAlignment="Center">
+                <TextBlock Text="Hàng hóa thành phần" FontSize="14" FontWeight="Bold" Foreground="#333333"/>
+                <Image Style="{StaticResource InfoIconStyle}" ToolTip="Là những mặt hàng có thể sử dụng hàng hóa này là món thêm"/>
+            </StackPanel>
+
+            <!-- Search Box -->
+            <Border Grid.Column="1" Margin="20,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4" Background="White">
+                        <TextBox x:Name="SearchTextBox" 
+                             Padding="20,10"
+                             FontSize="13"
+                             Foreground="#333333"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             TextChanged="SearchTextBox_TextChanged"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Search Results Dropdown -->
+        <Border Grid.Row="1" Padding="20,10" Visibility="Collapsed" x:Name="SearchResultsBorder">
+            <Border BorderBrush="#DDDDDD" BorderThickness="1" Background="#F9F9F9">
+                <ListBox x:Name="SearchResultsListBox" 
+                         MaxHeight="200"
+                         MouseDoubleClick="SearchResult_DoubleClick"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10" BorderBrush="#F0F0F0" BorderThickness="0,0,0,1">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding TenHangHoa}" FontWeight="Bold" Foreground="#333333" FontSize="12"/>
+                                    <TextBlock Text="{Binding MaHangHoa}" FontSize="11" Foreground="#999999" Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+        </Border>
+
+        <!-- Components Table -->
+        <Border Grid.Row="2" Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Table Header -->
+                <Grid Grid.Row="0" Background="#F5F5F5" Margin="0,0,0,10" Height="35">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="STT" FontWeight="Bold" Padding="8" Foreground="#666666" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="Mã hàng hóa" FontWeight="Bold" Padding="8" Foreground="#666666" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="Tên hàng thành phần" FontWeight="Bold" Padding="8" Foreground="#666666" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="Giá bán" FontWeight="Bold" Padding="8" Foreground="#666666" VerticalAlignment="Center" TextAlignment="Right"/>
+                    <TextBlock Grid.Column="4" Text="Hành động" FontWeight="Bold" Padding="8" Foreground="#666666" VerticalAlignment="Center"/>
+                </Grid>
+
+                <!-- Components List -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                    <ItemsControl x:Name="ComponentsItemsControl">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Background="White" Margin="0,0,0,1" Height="50">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="{Binding STT}" Padding="8" VerticalAlignment="Center" Foreground="#333333" FontSize="12"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding MaHangHoa}" Padding="8" VerticalAlignment="Center" Foreground="#333333" FontSize="12"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding TenHangHoa}" Padding="8" VerticalAlignment="Center" Foreground="#333333" FontSize="12" TextTrimming="CharacterEllipsis"/>
+
+                                    <TextBlock Grid.Column="3" Text="{Binding GiaVon, StringFormat=N0}" 
+                                              Padding="8" VerticalAlignment="Center" Foreground="#333333" FontSize="12" 
+                                              TextAlignment="Right"/>
+
+                                    <Button Grid.Column="4" 
+                                            Style="{StaticResource TransparentButtonStyle}"
+                                            Click="DeleteComponent_Click">
+                                        <Image Source="/Assets/Icons/iconsRemove48.png" Width="25"/>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+            </Grid>
+        </Border>
+
+        <!-- Summary -->
+        <Border Grid.Row="3" Background="#FAFAFA" BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="10" Margin="20,10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Tổng giá vốn thành phần" Foreground="#666666" FontSize="12"/>
+                <TextBlock x:Name="TotalCostTextBlock" Text="0" Foreground="#333333" FontWeight="Bold" FontSize="12" Margin="10,0,30,0"/>
+
+                <TextBlock Text="Tổng giá bán thành phần" Foreground="#666666" FontSize="12"/>
+                <TextBlock x:Name="TotalPriceTextBlock" Text="0" Foreground="#333333" FontWeight="Bold" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

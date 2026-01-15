@@ -110,3 +110,9 @@ E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\AddGoodsWindow
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\ScrollViewer.baml
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\RichTextEditor.baml
 E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\RichTextEditor.g.cs
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\ComponentsTab.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\ComponentsTab.g.cs
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\Icons.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Resources\Styles\TextBox.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\SideDishTab.baml
+E:\vstimPJ\RestMan3\RestMan3\obj\Debug\net8.0-windows\Views\Goods\SideDishTab.g.cs

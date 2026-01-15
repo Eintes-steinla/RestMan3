@@ -10,7 +10,9 @@
                 <ResourceDictionary Source="/Resources/Styles/Button.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/ComboBox.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/CheckBox.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/TextBox.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/RadioButton.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Icons.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/DataGrid.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/ScrollViewer.xaml"/>
             </ResourceDictionary.MergedDictionaries>
