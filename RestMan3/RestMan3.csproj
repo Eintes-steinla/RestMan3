@@ -35,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\iconsAlignCenter48.png" />
+    <None Remove="Assets\Icons\iconsAlignLeft48.png" />
+    <None Remove="Assets\Icons\iconsAlignRight48.png" />
     <None Remove="Assets\Icons\iconsAnalytics60.png" />
     <None Remove="Assets\Icons\iconsBack64.png" />
     <None Remove="Assets\Icons\iconsBan64.png" />
@@ -50,13 +53,18 @@
     <None Remove="Assets\Icons\iconsDownArrow50.png" />
     <None Remove="Assets\Icons\iconsEnd60.png" />
     <None Remove="Assets\Icons\iconsFile48.png" />
+    <None Remove="Assets\Icons\iconsHyperlink50.png" />
     <None Remove="Assets\Icons\iconsImport52.png" />
+    <None Remove="Assets\Icons\iconsIndent48.png" />
     <None Remove="Assets\Icons\iconsInfo48.png" />
+    <None Remove="Assets\Icons\iconsList48.png" />
     <None Remove="Assets\Icons\iconsLock48.png" />
     <None Remove="Assets\Icons\iconsLogout52.png" />
     <None Remove="Assets\Icons\iconsMenu50.png" />
     <None Remove="Assets\Icons\iconsNotebook40.png" />
     <None Remove="Assets\Icons\iconsNotification48.png" />
+    <None Remove="Assets\Icons\iconsNumberedList50.png" />
+    <None Remove="Assets\Icons\iconsOutdent48.png" />
     <None Remove="Assets\Icons\iconsPencil64.png" />
     <None Remove="Assets\Icons\iconsPhone48.png" />
     <None Remove="Assets\Icons\iconsPlus60.png" />
@@ -86,6 +94,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Icons\iconsAlignCenter48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsAlignLeft48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsAlignRight48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsAnalytics60.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -131,10 +148,19 @@
     <Resource Include="Assets\Icons\iconsFile48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsHyperlink50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsImport52.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\iconsIndent48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\iconsInfo48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsList48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsLock48.png">
@@ -150,6 +176,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsNotification48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsNumberedList50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\iconsOutdent48.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\iconsPencil64.png">

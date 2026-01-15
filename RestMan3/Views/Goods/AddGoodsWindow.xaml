@@ -155,7 +155,7 @@
                       Style="{StaticResource OverlayScrollViewer}">
             <Grid>
                 <!-- Thông tin Tab Content -->
-                <Grid x:Name="ThongTinContent" Margin="20,20">
+                <Grid Visibility="Visible" x:Name="ThongTinContent" Margin="20,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -469,18 +469,17 @@
                 </Grid>
 
                 <!-- Mô tả chi tiết Tab Content -->
-                <StackPanel x:Name="MoTaContent" Visibility="Collapsed" Margin="20,20">
-                    <TextBlock Text="Mô tả chi tiết" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>
+                <StackPanel Visibility="Collapsed" x:Name="MoTaContent" Margin="20,20">
+                    <!--<TextBlock Text="Mô tả chi tiết" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>-->
                     <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
                         <StackPanel>
-                            <TextBlock Text="Mô tả" Style="{StaticResource InputLabelStyle}" Margin="0,0,0,15"/>
                             <local:RichTextEditor x:Name="RichTextEditorControl" Height="300"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>
 
                 <!-- Thành phần Tab Content -->
-                <StackPanel x:Name="ThanhPhanContent" Visibility="Collapsed" Margin="20,20">
+                <StackPanel Visibility="Collapsed" x:Name="ThanhPhanContent" Margin="20,20">
                     <TextBlock Text="Thành phần" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>
                     <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
                         <StackPanel>
