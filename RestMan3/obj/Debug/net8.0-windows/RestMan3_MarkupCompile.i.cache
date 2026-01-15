@@ -16,5 +16,5 @@ E:\vstimPJ\RestMan3\RestMan3\App.xaml
 2391492855871
 MainWindow.xaml;Resources\Styles\Button.xaml;Resources\Styles\CheckBox.xaml;Resources\Styles\Colors.xaml;Resources\Styles\ComboBox.xaml;Resources\Styles\DataGrid.xaml;Resources\Styles\Icons.xaml;Resources\Styles\RadioButton.xaml;Resources\Styles\ScrollViewer.xaml;Resources\Styles\TextBox.xaml;Views\DashBoardView.xaml;Views\Goods\AddGoodsWindow.xaml;Views\Goods\CategoryView.xaml;Views\Goods\ComponentsTab.xaml;Views\Goods\RichTextEditor.xaml;Views\Goods\SideDishTab.xaml;Views\LoginView.xaml;Views\Test.xaml;
 
-False
+True
 

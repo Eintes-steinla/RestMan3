@@ -5,6 +5,7 @@
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- ModernCheckBox -->
     <Style x:Key="ModernCheckBox" TargetType="CheckBox">
         <Setter Property="Foreground" Value="{StaticResource DarkText}"/>
         <Setter Property="FontSize" Value="14"/>
@@ -66,7 +67,6 @@
     </Style>
 
     <!-- ModernToggleSwitch -->
-
     <Style x:Key="ModernToggleSwitch" TargetType="ToggleButton">
         <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="26"/>
@@ -145,4 +145,5 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
 </ResourceDictionary>

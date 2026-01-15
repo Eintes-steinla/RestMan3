@@ -146,7 +146,7 @@
                       Style="{StaticResource OverlayScrollViewer}">
             <Grid>
                 <!-- Thông tin Tab Content -->
-                <Grid Visibility="Collapsed" x:Name="ThongTinContent" Margin="20,20">
+                <Grid Visibility="Visible" x:Name="ThongTinContent" Margin="20,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -479,7 +479,7 @@
                 </StackPanel>
 
                 <!-- Món thêm Tab Content -->
-                <StackPanel Visibility="Visible" x:Name="MonThemContent" Margin="20,20">
+                <StackPanel Visibility="Collapsed" x:Name="MonThemContent" Margin="20,20">
                     <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
                         <StackPanel>
                             <local:SideDishTab x:Name="SideDishTabControl"/>
@@ -488,18 +488,48 @@
                 </StackPanel>
 
                 <!-- Chi nhánh Tab Content -->
-                <StackPanel x:Name="ChiNhanhContent" Visibility="Collapsed" Margin="20,20">
-                    <TextBlock Text="Chi nhánh" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,20"/>
-                    <Border Background="White" BorderBrush="#EEEEEE" BorderThickness="1" Padding="20">
-                        <StackPanel>
-                            <TextBlock Text="Quản lý hàng hóa theo chi nhánh" 
-                                       Style="{StaticResource InputLabelStyle}"/>
-                            <TextBlock Text="Chưa có dữ liệu chi nhánh" 
-                                       FontSize="13" 
-                                       Foreground="#999999"
-                                       FontStyle="Italic"
-                                       Margin="0,0,0,15"/>
-                        </StackPanel>
+                <StackPanel Visibility="Collapsed" x:Name="ChiNhanhContent" Margin="20,20">
+                    <Border BorderBrush="#D1E9F6" BorderThickness="1" CornerRadius="4" Margin="0" Background="White">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0" Background="#E3F2FD" Padding="20,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="Tên chi nhánh" 
+                                               FontWeight="Bold" Foreground="#333333" FontSize="14"/>
+
+                                    <TextBlock Grid.Column="1" Text="Trạng thái kinh doanh" 
+                                               FontWeight="Bold" Foreground="#333333" FontSize="14" 
+                                               HorizontalAlignment="Right"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="1" Padding="20,15" BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="Chi nhánh trung tâm" 
+                                               VerticalAlignment="Center" Foreground="#333333" FontSize="14"/>
+
+                                    <CheckBox Grid.Column="1" 
+                                              Style="{StaticResource ModernToggleSwitch}" 
+                                              HorizontalAlignment="Right"
+                                              IsChecked="True"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
                     </Border>
                 </StackPanel>
             </Grid>
